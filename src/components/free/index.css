@@ -1,0 +1,77 @@
+.free-student-layout {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  position: relative;
+}
+.sidebar::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  right: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #00d2ff 25%,
+    #00d2ff 75%,
+    #00d2ff 75%,
+    #ffffff 100%
+  );
+}
+.sidebar.mini {
+  width: 85px;
+  height: 100vh;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 250px); /* Adjust content area width */
+  transition: width 0.3s ease;
+}
+
+.content-area.mini {
+  width: calc(100% - 85px); /* Adjust content width when sidebar is collapsed */
+}
+
+.header {
+  height: 60px;
+  background-color: rgb(246, 255, 254);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.content-body {
+  flex: 1; /* Takes up remaining space */
+  background-color: rgb(246, 255, 254);
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 820px) {
+  .free-student-layout {
+    flex-direction: column !important;
+  }
+
+  .content-area.mini {
+    width: calc(100% - 0px);
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content-area {
+    width: 100%;
+  }
+}

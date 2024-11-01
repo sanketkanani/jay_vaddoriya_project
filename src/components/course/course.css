@@ -1,0 +1,11 @@
+.swal2-confirm {
+    background-color:rgb(45 178 196) !important;
+    border-radius: 30px;
+}
+
+.swal2-cancel{
+    background-color:rgb(255, 255, 255) !important;
+    color: rgb(45 178 196) !important;
+    border-radius: 30px;
+
+}

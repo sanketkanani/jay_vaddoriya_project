@@ -1,0 +1,89 @@
+.semicircle-percent-value {
+  color: #118ede;
+  text-align: center;
+  font-family: Outfit;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* top: 35px; */
+}
+
+.chart-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.chart-wrapper .chart-title{
+  display: none;
+  /* width: 100% !important;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 8px; */
+}
+
+.chart-info-wrapper{
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  width: 100%;
+}
+
+.chart-info-wrapper div{
+  /* width: 100%; */
+}
+
+@media only screen and (max-width: 481px)  {
+  .chart-wrapper{
+    flex-direction: column;
+  }
+  .performance-overview{
+    width: 100%;
+  }
+
+  .semicircle-content{
+    margin: 0px;
+  }
+
+    .chart-wrapper .chart-title {
+      display: block;
+    }
+}
+
+/* @media only screen and (min-width: 768px) and (max-width: 1366px){
+  .chart-wrapper{
+    flex-direction: column;
+  }
+
+  .other-cards-container,.lectures-cards{
+    display: grid !important;
+  }
+
+  .lectures-info{
+    width: 100%;
+  }
+
+
+  .extra-btns{
+    flex-direction: column !important;
+  }
+
+    .extra-btns span {
+      padding-bottom: 10px;
+    }
+
+  .chart-wrapper .performance-chart{
+    margin-bottom: 10px;
+  }
+
+  .chart-wrapper  .performance-overview{
+    margin-top: 10px;
+  }
+} */

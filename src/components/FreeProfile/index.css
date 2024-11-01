@@ -1,0 +1,292 @@
+
+
+.profile-left-side-content {
+  width: 75%;
+  padding-right: 25px;
+}
+
+.profile-right-side-content {
+  width: 25%;
+}
+
+.profile-right-side-content .calendar-content {
+  margin: 0px;
+}
+
+.profile-right-side-content .semicircle-content {
+  margin: 20px 0px 20px 0px;
+}
+
+.profile-right-side-content .semicircle-content .semicircle-map {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-left-side-content .card {
+  background: #ffffff;
+  box-shadow: 0px 5px 25px 0px #3e909c1a;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.profile-left-side-content .card .student-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.profile-left-side-content .card .student-card .student-info {
+  padding: 10px 0px 0px 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-left-side-content .card .student-card .student-info .info {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.profile-left-side-content .card .student-card .student-info .name {
+  font-family: Outfit;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3c4250;
+}
+
+.profile-left-side-content .card .student-card .student-info .address {
+  display: flex;
+  align-items: center;
+}
+
+.profile-left-side-content .card .student-card .student-info .address span {
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #595f6e;
+  padding-left: 8px;
+}
+
+.profile-left-side-content .card .student-card .student-info .title {
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #595f6e;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.profile-left-side-content .card .student-wrapper {
+  padding: 10px;
+}
+
+.profile-left-side-content .card .student-detail {
+  padding-top: 20px;
+  display: flex;
+  border-top: 1px solid #a4c3c8;
+}
+
+.profile-left-side-content .card .student-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.profile-left-side-content .card .student-form .input-box .MuiInputBase-root {
+  height: 48px;
+}
+
+.profile-left-side-content .card .student-form .input-center {
+  padding: 0px 10px;
+}
+
+.profile-left-side-content .card .student-form .input-box label {
+  font-family: Outfit;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #595f6e;
+}
+
+.profile-left-side-content .card .student-detail .left,
+.profile-left-side-content .card .student-detail .right {
+  width: 50%;
+}
+
+.profile-left-side-content .card .student-detail .left .key,
+.profile-left-side-content .card .student-detail .right .key {
+  display: flex;
+  align-items: center;
+  padding: 8px 0px;
+}
+
+.profile-left-side-content .card .student-detail .left .key .title,
+.profile-left-side-content .card .student-detail .right .key .title {
+  font-family: Outfit;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #595f6e;
+  padding-right: 4px;
+}
+
+.profile-left-side-content .card .student-detail .left .key .value,
+.profile-left-side-content .card .student-detail .right .key .value {
+  font-family: Outfit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3c4250;
+}
+
+.profile-left-side-content .card .form-action {
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-left-side-content .card .form-action button {
+  border-radius: 10px;
+  background: #35c69d;
+  color: #ffffff;
+  height: 40px;
+  width: 170px;
+}
+
+@media only screen and (max-width: 480px) {
+  .student-content {
+    flex-direction: column;
+  }
+
+  .profile-left-side-content,
+  .profile-right-side-content {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .student-wrapper .student-detail {
+    flex-direction: column-reverse;
+  }
+
+  .student-wrapper .student-detail .left,
+  .student-wrapper .student-detail .right {
+    width: 100% !important;
+  }
+
+  .profile-left-side-content {
+    margin-bottom: 20px;
+  }
+
+  .profile-left-side-content .card .student-form {
+    flex-direction: column;
+    padding-top: 0px;
+  }
+
+  .profile-left-side-content .card .student-form .input-box {
+    width: 100%;
+  }
+
+  .profile-left-side-content .card .student-form .input-center {
+    margin: 10px 0px;
+    padding: 0px;
+  }
+
+  .student-detail .value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .student-detail .title {
+    white-space: nowrap;
+  }
+
+  .profile-right-side-content .semicircle-content .semicircle-map {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 820px) {
+  .student-content {
+    flex-direction: column;
+  }
+
+  .profile-left-side-content,
+  .profile-right-side-content {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .profile-right-side-content {
+    display: flex;
+  }
+
+  .profile-right-side-content .calendar-content {
+    margin: 0px 0px 20px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+  }
+
+  .profile-right-side-content .semicircle-content {
+    padding: 0px;
+    width: 60%;
+    margin: 0px 0px 0px 10px;
+  }
+
+  .profile-left-side-content {
+    margin-bottom: 20px;
+  }
+
+  .profile-left-side-content .card .student-form .input-box {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 700px) {
+  .profile-right-side-content {
+    flex-direction: column;
+  }
+
+  .profile-right-side-content .semicircle-map {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .student-detail .left {
+    padding-right: 4px;
+  }
+  .student-detail .right {
+    padding-left: 4px;
+  }
+
+  .student-detail .value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .student-detail .title {
+    white-space: nowrap;
+  }
+}

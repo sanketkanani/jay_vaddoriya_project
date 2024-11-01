@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Parisienne&family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Parisienne&family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Great+Vibes&family=Parisienne&family=UnifrakturCook:wght@700&display=swap');
+
+@font-face {
+    font-family: 'Zinaida';
+    src: url('fonts/Zinaida.woff2') format('woff2'),
+        url('fonts/Zinaida.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.main_bg_start {
+    max-width: 1104px;
+    width: 100%;
+    /* height: calc(100vh - 60px); */
+    height: 740px;
+    margin: auto;
+    padding: 0px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    background-image: url(../ReportTemplate2/assets/Fast-Track-Certificate-3-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+}
+
+.certificate_container_bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+table {
+    width: 70%;
+    margin: auto;
+    border-collapse: collapse;
+    padding: 20px;
+}
+
+td {
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 50px;
+    font-family: 'UnifrakturCook', cursive;
+    line-height: 1;
+    color: #0c253c;
+}
+
+.content {
+    font-size: 20px;
+}
+
+.footer {
+    font-size: 16px;
+}

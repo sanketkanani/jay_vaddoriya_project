@@ -1,0 +1,822 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.Outfit {
+  font-family: "Outfit", sans-serif;
+}
+.highlighted-notice {
+  background-color: #cdf8fe;
+}
+
+.dashboard-left-side-content {
+  width: 75%;
+  padding-right: 25px;
+}
+
+.dashboard-right-side-content {
+  width: 25%;
+}
+
+.calendar-content {
+  border-radius: 10px;
+}
+
+.lectures-cards {
+  color: #595f6e;
+  font-family: Outfit;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px 20px 0px 20px;
+  display: flex;
+  gap: 25px;
+}
+
+.card-title {
+  color: #595f6e;
+  font-family: Outfit;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.ongoing-container {
+  border-radius: 10px;
+  border: 1px solid rgba(53, 198, 157, 0.2);
+  background: rgba(53, 198, 157, 0.05);
+  margin-top: 12px;
+}
+
+.upcoming-container {
+  border-radius: 10px;
+  border: 1px solid rgba(243, 159, 36, 0.2);
+  background: rgba(243, 159, 36, 0.05);
+  margin-top: 12px;
+}
+
+.ongoing-container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px 0px 15px;
+}
+
+.ongoing-container-header-title {
+  color: #35c69d;
+  font-size: 18px;
+  font-weight: 600;
+  width: 80%;
+}
+
+.upcoming-container-header-title {
+  color: #f39f24;
+  font-size: 18px;
+  font-weight: 600;
+  width: 80%;
+}
+
+.ongoing-container-header-online-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ongoing-container-header-online-text {
+  color: #35c69d;
+  text-align: right;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 5px;
+}
+
+.upcoming-container-header-online-text {
+  color: #f39f24;
+  text-align: right;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 5px;
+}
+
+.ongoing-container-field {
+  color: #595f6e;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 10px;
+}
+
+.ongoing-container-field.extra-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.ongoing-container-field-bold {
+  color: #3c4250;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn {
+  padding: 8px;
+  color: #fff;
+  text-align: center;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 500;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-join {
+  border-radius: 5px;
+  background: #35c69d !important;
+}
+
+.btn-join-disabled {
+  background: #a0a0a0 !important;
+  color: #ffffff !important;
+}
+
+.btn-add-reminder {
+  border-radius: 5px;
+  background: #f39f24 !important;
+}
+
+.btn.btn-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  border-color: #a0a0a0 !important;
+  background-color: #a0a0a0 !important;
+}
+
+.other-cards {
+  color: #595f6e;
+  font-family: Outfit;
+  padding: 15px 20px;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.other-cards-container {
+  /* display: flex; */
+  width: 100%;
+  gap: 20px;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+.other-cards-wrapper {
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.other-cards-wrapper.blue {
+  background: rgba(17, 142, 222, 0.1);
+}
+
+.other-cards-wrapper.cyan {
+  background: rgba(64, 194, 212, 0.1);
+}
+
+.other-cards-wrapper.green {
+  background: rgba(53, 198, 157, 0.1);
+}
+
+.other-cards-wrapper-header-title {
+  font-family: Outfit;
+  font-size: 18px;
+  font-weight: 600;
+  min-height: 60px;
+}
+
+.other-cards-wrapper-header-title.blue {
+  color: #118ede;
+}
+
+.other-cards-wrapper-header-title.cyan {
+  color: #40c2d4;
+}
+
+.other-cards-wrapper-header-title.green {
+  color: #35c69d;
+}
+
+.other-cards-wrapper-header-online {
+  color: #118ede;
+  text-align: right;
+  font-family: Outfit;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.other-cards-wrapper-header {
+  color: #118ede;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.other-cards-wrapper-subject-title {
+  color: #3c4250;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.other-cards-wrapper-subject-extra-info {
+  color: #595f6e;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.other-cards-footer {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 15px;
+  gap: 10px; */
+}
+
+.other-cards-footer-line {
+  /* width: 50%;
+  height: 1px;
+  flex-shrink: 0; */
+}
+
+.other-cards-footer-line.blue {
+  background: #118ede;
+}
+
+.other-cards-footer-line.cyan {
+  background: #40c2d4;
+}
+
+.other-cards-footer-line.green {
+  background: #35c69d;
+}
+
+.btn-start.blue {
+  border-radius: 5px;
+  background: #118ede;
+}
+
+.btn-start.cyan {
+  border-radius: 5px;
+  background: #40c2d4;
+}
+
+.btn-start.green {
+  border-radius: 5px;
+  background: #35c69d;
+}
+
+.text.blue {
+  color: #118ede;
+}
+
+.text.cyan {
+  color: #f39f24;
+}
+
+.text.green {
+  color: #35c69d;
+}
+
+.user-image {
+  width: 130px;
+  height: 130px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: snow;
+}
+
+.user-title {
+  color: #2a3140;
+  font-family: Outfit;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-email {
+  color: #595f6e;
+  font-family: Outfit;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.user-left-side {
+  width: 30%;
+}
+
+.user-right-side {
+  width: 70%;
+  background-repeat: no-repeat !important;
+  background-position: right !important;
+}
+
+.calender-wrapper .MuiDateCalendar-root {
+  margin: 0px;
+  width: 100%;
+}
+
+.content-right-bar .semicircle-content .semicircle-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebar .active-menu {
+  box-shadow: 0px 10px 15px 0px #36c0d440;
+  background: linear-gradient(273.24deg, #40c2d4 0%, #3dcee8 100%);
+  border-radius: 10px;
+}
+
+.sidebar .active-menu span {
+  color: #ffffff;
+}
+
+.sidebar-short {
+  width: 85px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0px;
+  background: #ffffff;
+}
+
+.sidebar-short .mobile-menu-item {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-short .active-menu {
+  background: linear-gradient(273.24deg, #40c2d4 0%, #3dcee8 100%);
+  box-shadow: 0px 10px 15px 0px #36c0d440;
+  border-radius: 10px;
+  margin: 10px 0px;
+  width: 44px;
+  height: 44px;
+}
+
+/* mobaile scren  */
+@media only screen and (max-width: 480px) {
+  body .sidebar {
+    display: none;
+  }
+
+  .student-app .student-main .student-content {
+    flex-direction: column;
+  }
+
+  .student-content .dashboard-left-side-content,
+  .student-content .dashboard-right-side-content {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .student-content .dashboard-right-side-content {
+    margin-top: 20px;
+  }
+
+  .student-content .lectures-cards,.student-content .other-cards{
+    padding: 10px;
+  }
+
+  .student-content .lectures-cards,
+  .student-content .other-cards .other-cards-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .student-content .lectures-cards .lectures-info {
+    width: 100%;
+  }
+
+  .student-content .ongoing-container-field.extra-btns {
+    flex-direction: column;
+  }
+
+  .student-content .ongoing-container-field.extra-btns button {
+    margin-top: 10px;
+    width: fit-content;
+  }
+
+  .sub-content {
+    flex-direction: column;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content-right-bar,
+  .content .sub-content .student-tab {
+    width: 100%;
+  }
+
+  .content .sub-content .student-tab {
+    padding: 0px;
+  }
+
+  .content-right-bar {
+    padding: 20px;
+  }
+
+  .content .sub-content .semicircle-content {
+    padding: 0px;
+  }
+
+  .content .sub-content .calendar-content {
+    margin: 0px 0px 20px 0px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .content .sub-content .calendar-content .MuiDateCalendar-root {
+    width: auto;
+  }
+
+  .content .sub-content .notice-content {
+    padding: 10px;
+    margin: 20px 20px 0px 20px;
+  }
+
+  .content .sub-content .notice-content .notice-img {
+    width: 60px;
+    height: 60px;
+    margin: 0px;
+  }
+
+  .content .sub-content .notice-content .notice-img .notice-id {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+  }
+
+  .content .sub-content .notice-content .notice-wrapper {
+    margin: 0px;
+    padding-left: 10px;
+  }
+
+  .content .sub-content .notice-content .notice-info {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .content .sub-content .notice-content .notice-container {
+    justify-content: space-between;
+  }
+
+  .content .sub-content .notice-content .notice-wrapper .notice-text {
+    color: #3c4250;
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .content .sub-content .notice-content .notice-wrapper .notice-desc {
+    color: #595f6e;
+    font-family: Outfit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 19px;
+    /* 135.714% */
+  }
+
+  .content .lectures-cards {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .content .lectures-cards .lectures-info {
+    width: 100%;
+  }
+
+  .content .sub-content .other-cards-container {
+    flex-direction: column;
+  }
+
+  .content .cta {
+    width: 135px;
+    padding: 10px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clear: both;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .sidebar-short {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .student-content .ongoing-container-field.extra-btns {
+    flex-direction: column;
+  }
+
+  .student-content .ongoing-container-field.extra-btns button {
+    margin-top: 10px;
+    width: fit-content;
+  }
+
+  .student-content .dashboard-right-side-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .student-content .dashboard-right-side-content .calendar-content{
+    width: 100% !important; 
+  }
+
+  .student-content .dashboard-right-side-content .semicircle-content{
+    width: 100% !important;
+    padding-right: 0px !important;
+  }
+}
+
+/* @media only screen and (min-width: 481px) and (max-width: 700px) {
+  .content-right-bar {
+    flex-direction: column;
+  }
+
+  .calendar-content,
+  .semicircle-content {
+    width: 100% !important;
+    margin: 0px;
+  }
+
+  .content-right-bar .semicircle-content .semicircle-map {
+    max-width: 480px;
+  }
+
+  .calender-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calender-wrapper .MuiDateCalendar-root {
+    max-width: 480px;
+    width: inherit !important;
+  }
+
+  .calendar-content .MuiDayCalendar-header,
+  .calendar-content .MuiDayCalendar-weekContainer {
+    max-width: 480px;
+    justify-content: space-around;
+  }
+} */
+
+/* tblet design  */
+
+@media only screen and (min-width: 481px) and (max-width: 820px) {
+  body .sidebar {
+    display: none;
+  }
+
+  .sub-content {
+    flex-direction: column;
+    background: #f6fffe;
+    padding: 0px 15px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content-right-bar,
+  .content .sub-content .student-tab {
+    width: 100%;
+    background: #f6fffe;
+    padding: 0px 15px;
+  }
+
+  .content .sub-content .student-tab .student-card {
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 5px 25px 0px rgba(62, 144, 156, 0.1);
+  }
+
+  .content .sub-content .student-tab .student-card .card-title {
+    color: #595f6e;
+    font-family: Outfit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .content .sub-content .student-tab {
+    padding: 0px;
+  }
+
+  .content-right-bar {
+    padding: 20px 0px 0px 0px;
+    display: flex;
+  }
+
+  .content-right-bar .calendar-content {
+    width: 40%;
+    margin-right: 10px;
+  }
+
+  .content-right-bar .semicircle-content {
+    width: 60%;
+    margin-left: 10px;
+  }
+
+  .content .sub-content .semicircle-content {
+    padding: 0px;
+  }
+
+  .content .sub-content .calendar-content {
+    margin: 0px 0px 20px 0px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .content .sub-content .calendar-content .MuiDateCalendar-root {
+    width: auto;
+  }
+
+  .content .sub-content .notice-content {
+    padding: 10px;
+  }
+
+  .content .sub-content .notice-content .notice-img {
+    width: 60px;
+    height: 60px;
+    margin: 0px;
+  }
+
+  .content .sub-content .notice-content .notice-img .notice-id {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+  }
+
+  .content .sub-content .notice-content .notice-wrapper {
+    margin: 0px;
+    padding-left: 10px;
+  }
+
+  .content .sub-content .notice-content .notice-info {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .content .sub-content .notice-content .notice-container {
+    justify-content: space-between;
+  }
+
+  .content .sub-content .notice-content .notice-wrapper .notice-text {
+    color: #3c4250;
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .content .sub-content .notice-content .notice-wrapper .notice-desc {
+    color: #595f6e;
+    font-family: Outfit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 19px;
+    /* 135.714% */
+  }
+
+  .content .lectures-cards {
+    padding: 10px;
+  }
+
+  .content .lectures-cards .lectures-info {
+    width: 100%;
+  }
+
+  .content .sub-content .other-cards-container {
+    flex-direction: column;
+  }
+
+  .content .cta {
+    width: auto;
+    padding: 10px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-short {
+    display: none;
+  }
+
+
+  .student-app .student-main .student-content {
+    flex-direction: column;
+  }
+
+  .student-content .dashboard-left-side-content,
+  .student-content .dashboard-right-side-content {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .student-content .dashboard-right-side-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .student-content .dashboard-right-side-content .calendar-content{
+    width: 35%;
+  }
+
+
+  .student-content .dashboard-right-side-content .semicircle-content .semicircle-map{
+    width: 100%;
+  }
+
+  .student-content .dashboard-right-side-content .semicircle-content .semicircle-map .chart-info-wrapper .date-bg-box{
+    height: 40px;
+    width: 50px;
+  }
+
+  .student-content .dashboard-right-side-content .semicircle-content{
+    width: 65%;
+    padding-right: 20px;
+  }
+
+  .student-content .lectures-cards,.student-content .other-cards{
+    padding: 10px;
+  }
+
+  .student-content .other-cards .other-cards-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .student-content .lectures-cards .lectures-info {
+    width: 100%;
+  } 
+}
+
+@media(min-width:640px) {
+  .other-cards-container .slick-track {
+    /* gap: 20px; */
+    gap: 10px;
+  }
+}

@@ -1,0 +1,17 @@
+
+
+.PhoneInput{
+    border: 1px solid rgb(181 181 181/1);
+    border-radius: 9999px;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+}
+
+.PhoneInputInput{
+    color: rgb(53 53 53 / var(--tw-text-opacity));
+    font-weight: 500;
+}
+
+.PhoneInputInput:focus{
+    outline: 0;
+    border: 0;
+}

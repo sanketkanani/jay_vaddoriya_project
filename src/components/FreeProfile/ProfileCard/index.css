@@ -1,0 +1,33 @@
+.right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .key {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    
+  }
+  
+  .course-info {
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  @media screen and (max-width: 480px) {
+    .key {
+      flex: 100%; 
+    }
+  }
+  @media screen and (max-width: 360px) {
+    .key {
+      flex: 100%; 
+    }
+  }
+  

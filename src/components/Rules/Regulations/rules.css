@@ -1,0 +1,11 @@
+.custombox{padding:30px 30px 20px; background-color: #fff; border-radius: 10px; overflow: hidden;}
+.custombox .custombox-left{display: flex; flex-direction: column; justify-content: center;}
+.custombox .custombox-right{padding-left: 30px; display: flex; flex-direction: column; justify-content: center;}
+.custombox .title-text{margin-bottom: 15px;}
+.custombox .nwbtn{cursor: pointer;}
+.justify-between{justify-content: space-between;}
+.alineli{padding-left: 25px;}
+.alineli li{list-style-type: none; position: relative; margin-bottom: 8px; font-size: 16px; line-height: 23px;}
+.alineli li::before{position: absolute; content: '◾'; top: 0; left: -25px;}
+.custombox .controlimgsize{max-width: 350px; width: 100%; max-height:250px; height: 100%; margin: 0 auto;     object-fit: contain;}
+

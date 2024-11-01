@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.highlight {
+  background-color: #2db2c4 !important; /* Bright yellow background */
+  border-radius: 100% !important; /* Circle shape */
+  color: black !important; /* Text color */
+  font-weight: bold !important; /* Bold text */
+}
+.highlight abbr {
+  font-weight: 400;
+  color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.calender-wrapper
+  .MuiPickersSlideTransition-root
+  .MuiBadge-root
+  button[aria-selected="true"] {
+  background-color: #3dcee8;
+}
+
+@media only screen and (min-width: 1280px) {
+  .right-side-section {
+    position: fixed;
+    right: 0;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

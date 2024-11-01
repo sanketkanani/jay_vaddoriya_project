@@ -1,0 +1,46 @@
+.question-action-row {
+    margin: -10px;
+    flex-wrap: wrap;
+}
+.question-action-row > div{
+    width: 25%;
+    padding: 10px;
+}
+
+.answer-body .question-action-row > div > button.quiz-button{
+    width: 100%;
+    background: unset;
+    border: 1px solid rgba(60, 66, 80, 0.3);
+}
+
+.answer-body .question-action-row > div > button.quiz-button span.box{
+    background-color: rgba(197, 198, 203, 0.6);
+    color: rgba(60, 66, 80, 1);
+}
+.answer-body .question-action-row > div > button.quiz-button span.btn-text{
+    color: rgba(89, 95, 110, 1);
+}
+
+.answer-body .question-action-row > div > button.quiz-button.active-quiz-button{
+    background-color: rgba(53, 198, 157, 1);
+    border: 0;
+}
+.answer-body .question-action-row > div > button.quiz-button.active-quiz-button span.box{
+    background-color: #fff;
+    color: rgba(53, 198, 157, 1);
+}
+.answer-body .question-action-row > div > button.quiz-button.active-quiz-button span.btn-text{
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px){
+    .question-action-row > div{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .question-action-row > div{
+        width: 100%;
+    }
+}

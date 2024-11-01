@@ -1,0 +1,227 @@
+/* .mock-test-app {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: rgb(246, 255, 254);
+  display: flex;
+} */
+
+/* .mock-test-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+} */
+
+/* .mock-test-content {
+  padding: 20px 25px 20px 25px;
+} */
+
+.test-card {
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #35c69d;
+  position: relative;
+}
+
+.test-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.test-header .test-header-box {
+  border-radius: 10px 0px 10px 0px;
+  padding: 4px 10px 4px 10px;
+  background: #118ede1a;
+  color: #118ede;
+}
+
+.test-header span {
+  font-family: Outfit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.test-body {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-body img {
+  height: 180px;
+}
+
+.test-foolter {
+  padding: 0px 10px 14px 10px;
+}
+
+.test-foolter button {
+  font-family: Outfit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.test-foolter .pass {
+  background: #35c69d1a;
+  color: #35c69d;
+}
+
+.test-foolter .fail {
+  background: #f6274c1a;
+
+  color: #f6274c;
+}
+
+.test-card .bg-left {
+  display: flex;
+  align-items: flex-end;
+}
+
+.test-card .bg-left .border {
+  height: 100px;
+  border-right: 3px solid #35c69d;
+  width: 3px;
+}
+.test-card .bg-right .border {
+  height: 100px;
+  border-left: 3px solid #35c69d;
+  width: 3px;
+}
+
+.test-card .bg-left .box {
+  height: 30px;
+  background: #35c69d;
+  width: 11px;
+}
+.test-card .bg-right .box {
+  margin-top: 20px;
+  height: 30px;
+  background: #35c69d;
+  width: 11px;
+}
+
+.test-card .bg-right {
+  position: absolute;
+  top: 10px;
+  right: -5px;
+}
+
+.test-card .bg-left {
+  position: absolute;
+  bottom: 8px;
+  left: -16px;
+}
+
+.bg-test {
+  position: relative;
+  background: #c8f0ec80;
+  border-radius: 10px;
+}
+
+.test-disabled-card {
+  opacity: 0.4;
+  filter: blur(7px);
+  -webkit-filter: blur(7px);
+  background: #dff9f680;
+}
+
+.bg-test-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+@media only screen and (max-width: 480px) {
+  .student-content {
+    width: 100%;
+  }
+
+  .student-content .MuiGrid-container .MuiGrid-item {
+    max-width: 100%;
+    flex-basis: 100%;
+    /* padding-left: 22px; */
+    padding-left: 0;
+  }
+
+  .test-box-card {
+    padding-right: 15px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 820px) {
+  .student-content {
+    width: 100%;
+  }
+
+  .student-content .MuiGrid-container .MuiGrid-item {
+    max-width: 50%;
+    flex-basis: 50%;
+    /* padding-left: 32px !important; */
+  }
+
+  .test-box-card {
+    padding-right: 15px;
+  }
+  .css-qwfiov-MuiGrid-root {
+    justify-content: space-between;
+  }
+  .student-content .MuiGrid-container .MuiGrid-item {
+    max-width: calc(50% - 10px);
+    flex-basis: calc(50% - 10px);
+    padding-left: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  .css-qwfiov-MuiGrid-root {
+    justify-content: space-between;
+  }
+  .student-content .MuiGrid-container .MuiGrid-item {
+    max-width: calc(50% - 10px);
+    flex-basis: calc(50% - 10px);
+    padding-left: 0 !important;
+  }
+}

@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+.quiz-week-body .btn-active {
+  filter: drop-shadow(1px 0px 0px #3dcee8) drop-shadow(-1px 0px 0px #3dcee8)
+    drop-shadow(0px 1px 0px #3dcee8) drop-shadow(0px -1px 0px #3dcee8);
+  width: calc(100% - 4px);
+}
+
+.quiz-week-body .btn-active .btn-box {
+  filter: drop-shadow(1px 0px 0px #fff) drop-shadow(-1px 0px 0px #fff)
+    drop-shadow(0px 1px 0px #fff) drop-shadow(0px -1px 0px #fff)
+    drop-shadow(1px 1px 0px #fff) drop-shadow(-1px -1px 0px #fff)
+    drop-shadow(-1px 1px 0px #fff) drop-shadow(1px -1px 0px #fff);
+}
+
+.quiz-week-body .btn-active .polygon-btn {
+  color: #fff;
+  text-align: center;
+  clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0 50%);
+  background: linear-gradient(273.24deg, #40c2d4 0%, #3dcee8 100%);
+  background-repeat: no-repeat;
+  transition: background-position-y ease-in-out 250ms;
+  /* height: 70px; */
+  /* width: 355px; */
+  /* padding-left: 10px; */
+  /* display: flex;
+  align-items: center;
+  justify-content: flex-start; */
+}
+.exit-button .btn {
+  background-color: red;
+}
+
+.quiz-week-body .btn {
+  filter: drop-shadow(1px 0px 0px #c5c6cb) drop-shadow(-1px 0px 0px #c5c6cb)
+    drop-shadow(0px 1px 0px #c5c6cb) drop-shadow(0px -1px 0px #c5c6cb)
+    drop-shadow(1px 1px 0px #c5c6cb) drop-shadow(-1px -1px 0px #c5c6cb)
+    drop-shadow(-1px 1px 0px #c5c6cb) drop-shadow(1px -1px 0px #c5c6cb);
+  width: calc(100% - 4px);
+  height: auto;
+  padding: 0;
+}
+
+.btn .btn-box {
+  filter: drop-shadow(1px 0px 0px #c5c6cb) drop-shadow(-1px 0px 0px #c5c6cb)
+    drop-shadow(0px 1px 0px #c5c6cb) drop-shadow(0px -1px 0px #c5c6cb)
+    drop-shadow(1px 1px 0px #c5c6cb) drop-shadow(-1px -1px 0px #c5c6cb)
+    drop-shadow(-1px 1px 0px #c5c6cb) drop-shadow(1px -1px 0px #c5c6cb);
+}
+
+.quiz-week-body .btn .polygon-btn {
+  color: #fff;
+  text-align: center;
+  clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0 50%);
+  background: #ffffff;
+  background-repeat: no-repeat;
+  transition: background-position-y ease-in-out 250ms;
+  /* height: 70px;
+  width: 355px;
+  padding-left: 20px; */
+}
+
+.quiz-week-body .btn .btn-box span {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  clip-path: polygon(20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0 50%);
+  background-color: #c5c6cb;
+  background-repeat: no-repeat;
+  transition: background-position-y ease-in-out 250ms;
+  height: 50px;
+  width: 58px;
+}
+
+.quiz-week-body .btn-active .btn-box span {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  clip-path: polygon(20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0 50%);
+  background: #fff;
+  background-repeat: no-repeat;
+  transition: background-position-y ease-in-out 250ms;
+  height: 50px;
+  width: 58px;
+}
+
+.quiz-week-body .btn .btn-box span {
+  font-family: Outfit;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3c4250;
+  height: 50px;
+  width: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-week-body .btn .btn-main-text {
+  /* font-family: Outfit;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3c4250;
+  padding-left: 10px; */
+}
+
+.quiz-week-body .btn-active .btn-box span {
+  font-family: Outfit;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3ec9e0;
+  height: 50px;
+  width: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-week-body .btn-active .btn-main-text {
+  /*font-family: Outfit;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;*/
+  color: #fff;
+  /* padding-left: 10px; */
+}

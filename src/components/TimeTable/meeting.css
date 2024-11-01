@@ -1,0 +1,163 @@
+.upcoming-meeting-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.upcoming-meeting-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: #3c4250;
+  font-family: Outfit;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.link-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.view-all-link {
+  color: #2db2c4;
+  text-align: right;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.view-all-link svg {
+  display: initial;
+}
+
+.description {
+  /* padding-top: 5px; */
+  color: #595f6e;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.course-box {
+  margin-top: 15px;
+  border-radius: 2px 7px 7px 2px;
+  border: 1px solid #c5d9dc;
+  background: #fff;
+  display: flex;
+}
+
+.course-box-line {
+  border-radius: 2px 1px 1px 2px;
+  opacity: 0.6000000238418579;
+  background: #35c69d;
+  width: 5px;
+}
+
+.course-box-body {
+  width: 100%;
+  padding: 10px;
+}
+
+.course-box-header-wrapper {
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.course-box-header-title {
+  color: #3c4250;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.course-box-header-online {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.course-box-header-online svg {
+  display: initial;
+}
+
+.course-box-header-online-text {
+  color: #35c69d;
+  text-align: right;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.course-box-date-wrapper {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 10px; */
+}
+
+.course-box-date {
+  color: #595f6e;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.course-box-time {
+  color: #595f6e;
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.course-box-date-time-wrapper {
+  flex-direction: column;
+  display: flex;
+  width: 60%;
+}
+
+.course-box-date-body {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media only screen and (max-width: 480px) {
+
+  .map-course{
+    display: flex;
+    overflow: auto;
+    flex-wrap: nowrap !important;
+  }
+
+  .map-course .course-box{
+      width: 70%;
+      max-width: 75%;
+      min-width: 75%;
+      margin-right: 15px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 820px) {
+  .map-course{
+    display: flex;
+    overflow: auto;
+    flex-wrap: nowrap !important;
+  }
+  .map-course .course-box{
+    width: 40%;
+    max-width: 40%;
+    min-width: 40%;
+    margin-right: 15px;
+}
+
+}

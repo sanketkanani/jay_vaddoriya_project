@@ -1,0 +1,41 @@
+.performance-chart .semicircle-percent-value {
+  color: #118ede;
+  text-align: center;
+  font-family: Outfit;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  top: 35px;
+}
+
+.chart-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.chart-info-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.chart-info-wrapper div{
+  width: 100%;
+}
+
+@media only screen and (max-width: 481px)  {
+  .chart-wrapper{
+    flex-direction: column;
+  }
+  .performance-overview{
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,21 @@
+.student-content .custom-height{max-height: 690px; height: 100%; overflow: scroll;}
+.student-content .custom-height .smothanimation{transition: all 0.4s ease-in-out;}
+.student-content .custom-height .smothanimation .rounded-b-lg{transition: all 0.6s ease-in-out;}
+
+.weekbox{position: relative;}
+.weekbox::after{position: absolute; content: ""; top:-29px; left: 50%; background-image: url('./images/squire.png'); width: 21px; height: 21px; transform: translateX(-50%);}
+
+.weeksinglebox{position: relative;}
+.weeksinglebox::before{position: absolute; content: ""; top: -9px; left: 50%; transform: translateX(-50%); width: 1px; height: 8px; background-color: rgb(60, 66, 80);}
+
+.dlbtn{background-color: #35c69d; width: 35px; height: 35px; color: #fff; border-radius: 5px; display: flex; justify-content: center; align-items: center; position: absolute; right: 5px; top: 24px; transform: translateY(-50%); z-index: 22;}
+
+.batchbox{position: relative; background-color: #f9fffd; color: #3C4250; border-radius: 7px; font-size: 18px;}
+.batchbox::after{position: absolute; content: ""; top:-30px; left: 50%; background-image: url('./images/squirewithline.png'); width: 21px; height: 30px; transform: translateX(-50%);}
+.batchtitle{font-size: 20px; margin-bottom: 30px; margin-top: 20px;}
+
+.culsyllabus li{position: relative; padding: 5px 11px;}
+.culsyllabus li:first-child{padding-left: 0;}
+.culsyllabus li:last-child{padding-right: 0;}
+.culsyllabus li::before{border-bottom: 1px solid #ddd; position: absolute; content: ""; bottom:-6px; left: 0; width: 100%; height: 1px;}
+.culsyllabus .culsyllabus-active::after{border-bottom: 2.5px solid #35c69d; position: absolute; content: ""; bottom:-6.5px; left: 0; width: 100%; height: 1px;}
