@@ -1102,6 +1102,7 @@ section {
   padding: 6px 10px;
   text-align: center !important;
   margin-bottom: 25px !important;
+  width: max-content !important;
 }
 .student-main .left .stepper-box {
   text-align: left;
@@ -1144,6 +1145,7 @@ section {
 }
 .left-code-body .section-4 button {
   border: 1px solid #2db2c4 !important;
+  width: max-content !important;
 }
 
 /* Media Screen */
@@ -1483,5 +1485,49 @@ section {
   }
   .request_call_modal_main .modal_main_wrapper {
     width: 90%;
+  }
+}
+
+
+
+@media only screen and (min-width: 1024px){
+ .submission-block{
+    padding: 0;
+  }
+
+.submission-block{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+}
+
+@media only screen and (max-width: 425px){
+ .submission-block{
+    padding: 0;
+  }
+
+.submission-block{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+}
+
+.submission-block tr th > div > img{
+  max-width: unset;
+}
+
+.submission-block tr td{
+  text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+  .editor-for-mobile-and-tablet .right-code-body .code-editor {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .right-code .right-code-body .code-editor {
+        height: calc(100vh - 350px) !important;
   }
 }

@@ -111,10 +111,10 @@
 }
 
 .code-wrapper .left-code {
-  width: 30%;
+  width: 35%;
 }
 .code-wrapper .right-code {
-  width: 70%;
+  width: 65%;
   border-left: 1px solid #c5d9dc;
 }
 
@@ -376,6 +376,7 @@
   color: #118ede;
   margin-bottom: 8px;
   border-bottom: 1px solid;
+  width: max-content !important;
 }
 
 .left-code-body .section-7 .example-card .box {
@@ -894,6 +895,8 @@
 
   .editor-for-mobile-and-tablet {
     display: block;
+    margin: 10px 0 0 0;
+    border: 1px solid #c5d9dc;
   }
 
   .editor-for-mobile-and-tablet .right-code-body .code-editor {

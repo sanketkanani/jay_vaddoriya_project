@@ -111,6 +111,7 @@ const Teaching = (props) => {
                             : ""
                         }
                         onClick={() => handleCourseClick(batchId)}
+                        style={{ width: "max-content" }}
                       >
                         <span>{`Batch-${batchId} ${getInitials(name)}`}</span>
                       </div>

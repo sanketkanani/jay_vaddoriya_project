@@ -160,13 +160,13 @@ const Submission = ({ compilerResult }) => {
         </div>
       </div> */}
       <div className="submission-5">
-        <table>
+        <table className='submission-block'>
           <tr>
             <th>
               <div className="flex items-center">
                 <span>All statuses</span>
                 <img
-                  className="pl-2"
+                  className="pl-2 icon-size-10"
                   src="/images/Practice/down.svg"
                   alt="down icon"
                 />
@@ -176,7 +176,7 @@ const Submission = ({ compilerResult }) => {
               <div className="flex items-center">
                 <span>All languages</span>
                 <img
-                  className="pl-2"
+                  className="pl-2 icon-size-10"
                   src="/images/Practice/down.svg"
                   alt="down icon"
                 />

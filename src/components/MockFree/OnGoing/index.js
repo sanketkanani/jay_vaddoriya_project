@@ -167,9 +167,9 @@ const OnGoing = ({ sectionId }) => {
                     setConsolPanel(false);
                     setSubmitData({});
                   }}
-                  style={{ backgroundColor: step?.is_done ? "#35c69d1a" : "" }}
+                  style={{ backgroundColor: step?.is_done ? "#35c69d1a" : step.id === selectedQuestion.id ? "#40c3d6" : "#fff" , boxShadow:step?.is_done && "0px 5px 25px rgba(62, 144, 156, 0.15)"}}
                 >
-                  <span style={{ color: step?.is_done ? "#21c496" : "" }}>
+                  <span style={{ color: step?.is_done ? "#21c496" : step.id === selectedQuestion.id ? "#fff" : "#000" }}>
                     {step.ques_title}
                   </span>
                 </button>

@@ -95,6 +95,7 @@ const FreeMock = (props) => {
                         key={id}
                         className={id === tag ? "active-tag" : ""}
                         onClick={() => handleCourseClick(id, name)}
+                        style={{ width: "max-content" }}
                       >
                         <span>{name}</span>
                       </div>

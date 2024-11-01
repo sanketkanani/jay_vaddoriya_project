@@ -628,6 +628,7 @@ const Quiz = (othersCourseId, othersWeekId) => {
                       onClick={() => {
                         handleCourseClick(id);
                       }}
+                      style={{ width: "max-content" }}
                     >
                       <span>{name}</span>
                     </div>

@@ -93,7 +93,8 @@ const OnGoing = ({ sectionId }) => {
                   style={{
                     width: "100%",
                     borderRadius: "8px",
-                    boxShadow: "0px 5px 25px 0px #3e909c26",
+                    // boxShadow: "0px 5px 25px 0px #3e909c26",
+                    boxShadow:step?.is_done ? "0px 5px 25px rgba(62, 144, 156, 0.15)" : "0px 5px 25px 0px #3e909c26",
                     backgroundColor: step?.is_done
                       ? "#35c69d1a"
                       : step.id === selectedQuestion.id

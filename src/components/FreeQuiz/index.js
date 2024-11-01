@@ -180,7 +180,8 @@ const FreeQuiz = () => {
         <div className="p-5">
           <div className="quiz-week">
             {screen === "" && (
-              <div className="course-tags">
+            <div className="gap-1 overflow-x-scroll hide-scrollbar ">
+                <div className="course-tags">
                 {tag.map(({ id, name }) => (
                   <div
                     key={name}
@@ -188,10 +189,12 @@ const FreeQuiz = () => {
                     onClick={() => {
                       handleCourseClick(id);
                     }}
+                    style={{ width: "max-content" }}
                   >
                     <span>{name}</span>
                   </div>
                 ))}
+                </div>
               </div>
             )}
             {commonContent}
