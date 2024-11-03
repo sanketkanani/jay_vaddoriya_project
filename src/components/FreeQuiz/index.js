@@ -149,7 +149,7 @@ const FreeQuiz = () => {
         />
       )}
       {screen === "quiz-result" && (
-        <div className="p-20">
+        <div>
           <QuizResult
             submissionData={submissionData}
             setSubmissionData={setSubmissionData}

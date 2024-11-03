@@ -230,14 +230,25 @@ const QuizWeek = ({
 
   return (
     <div className="quiz-week-body xl:flex justify-between items-start">
-      <div className="count-down-mobile">
-        <img src="/images/Practice/clock.svg" alt="header icon" />
-        <span>
-          {String(Math.floor(timer / 3600)).padStart(2, "0")} :{" "}
-          {String(Math.floor((timer % 3600) / 60)).padStart(2, "0")} :{" "}
-          {String(timer % 60).padStart(2, "0")}
-        </span>
-      </div>
+      <div className="count-down-row flex w-full justify-between items-center mb-2">
+          <div className="count-down-mobile mb-0">
+          <img src="/images/Practice/clock.svg" alt="header icon" />
+          <span>
+            {String(Math.floor(timer / 3600) || 0).padStart(2, "0")} :{" "}
+            {String(Math.floor((timer % 3600) / 60) || 0).padStart(2, "0")} :{" "}
+            {String(timer % 60 || 0).padStart(2, "0")}
+          </span>
+        </div>
+        <button
+                type="button"
+                className="exit-button flex items-center px-4 py-3 rounded-md text-white bg-red-500 hover:bg-red-700 duration-150"
+                onClick={() => {
+                  handleExit();
+                }}
+              >
+                <span>EXIT</span>
+              </button>
+        </div>
       <div className="quiz-week-left xl:w-[calc(100%-325px)] w-full bg-white rounded-2xl shadow mb-7 lg:mb-0">
         <div className="xl:px-10 px-5 py-5 lg:py-10">
           <div className="quiz-question">
@@ -407,22 +418,11 @@ const QuizWeek = ({
                     id={quiz?.question_id}
                     questionNumber={index + 1}
                     status={quiz?.status}
+                    handleExit={handleExit}
                   />
                 </Grid>
               ))}
             </Grid>
-          </div>
-
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <button
-              type="button"
-              className="exit-button flex items-center px-4 py-3 rounded-md text-white bg-red-500 hover:bg-red-700 duration-150"
-              onClick={() => {
-                handleExit();
-              }}
-            >
-              <span>EXIT</span>
-            </button>
           </div>
         </div>
       </div>

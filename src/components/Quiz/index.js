@@ -592,7 +592,7 @@ const Quiz = (othersCourseId, othersWeekId) => {
           />
         )}
         {screen === "quiz-result" && (
-          <div className="p-20">
+          <div>
             <QuizResult
               list={list}
               setList={setList}

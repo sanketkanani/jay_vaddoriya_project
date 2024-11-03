@@ -29,8 +29,8 @@ const QuizResult = ({
   return (
     <>
       <div className="quiz-result md:!p-8 !p-5">
-        <div className="flex flex-wrap -mx-4">
-          <div className=" w-full px-4 lg:text-start text-center">
+        <div className="flex flex-wrap -mx-4 items-center">
+          <div className="xl:w-3/12 lg:w-4/12 w-full px-4 lg:text-start text-center">
             {submissionData?.score >= 75 ? (
               <img
                 src="/images/Quiz/quiz-success.svg"

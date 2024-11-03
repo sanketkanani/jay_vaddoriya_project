@@ -304,16 +304,28 @@ const QuizWeek = ({
   const isNextButtonDisabled = !isOptionSelected;
 
   return (
-    <div className="quiz-week-body xl:flex justify-between items-start">
-      <div className="count-down-mobile">
-        <img src="/images/Practice/clock.svg" alt="header icon" />
-        <span>
+    <>
+      <div className="count-down-row flex w-full justify-between items-center mb-2">
+        <div className="count-down-mobile mb-0">
+          <img src="/images/Practice/clock.svg" alt="header icon" />
+          <span>
           {/* {Math.floor(timer / 60)} : {String(timer % 60).padStart(2, "0")} */}
           {String(Math.floor(timer / 3600)).padStart(2, "0")} :{" "}
                   {String(Math.floor((timer % 3600) / 60)).padStart(2, "0")} :{" "}
                   {String(timer % 60).padStart(2, "0")}
-        </span>
+          </span>
+        </div>
+      <button
+                type="button"
+                className="exit-button flex items-center px-4 py-3 rounded-md text-white bg-red-500 hover:bg-red-700 duration-150"
+                onClick={() => {
+                  handleExit();
+                }}
+              >
+                <span>EXIT</span>
+              </button>
       </div>
+    <div className=" quiz-week-body quiz-week-block quiz-week-block xl:flex justify-between items-start">
       <div className="quiz-week-left xl:w-[calc(100%-325px)] w-full bg-white rounded-2xl shadow mb-7 lg:mb-0">
         <div className="xl:px-10 px-5 py-5 lg:py-10">
           <div
@@ -437,7 +449,8 @@ const QuizWeek = ({
       <div className="mt-5 xl:mt-0 quiz-week-right xl:w-[295px] w-full p-4 bg-white rounded-2xl shadow">
         <QuizPoint quizList={list} step={step} />
       </div>
-    </div>
+      </div>
+      </>
   );
 };
 

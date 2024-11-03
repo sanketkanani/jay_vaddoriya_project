@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 
-const QuizPoint = ({ quizList, step, currentQuestion }) => {
+const QuizPoint = ({ quizList, step, currentQuestion,handleExit }) => {
   const getClassNameFromStatus = (quizItem) => {
     const { status, id } = quizItem;
     // const stepId = step + 1;
@@ -17,7 +17,18 @@ const QuizPoint = ({ quizList, step, currentQuestion }) => {
 
   return (
     <div className="quiz-point-table">
-      <span className="title">Questions </span>
+      <div className="flex justify-between" style={{alignItems:"center"}}>
+        <span className="title" style={{margin:0}}>Questions </span>
+              <button
+                type="button"
+                className="exit-button-block exit-button flex items-center px-4 py-3 rounded-md text-white bg-red-500 hover:bg-red-700 duration-150"
+                onClick={() => {
+                  handleExit();
+                }}
+              >
+                <span>EXIT</span>
+              </button>
+      </div>
       <div className="box">
         <Grid container spacing={1} className="gap-y-2 !-mx-1">
           {quizList &&
