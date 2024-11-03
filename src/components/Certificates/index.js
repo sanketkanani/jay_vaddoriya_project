@@ -200,7 +200,7 @@ const StudentCertificates = () => {
           <div className="xl:w-[calc(100%-320px)] w-full px-3">
             <CertificateCard />
           </div>
-          <div className="xl:w-[320px] w-full px-3 hidden md:block">
+          <div className="xl:w-[320px] w-full px-3 right-side-section">
             <div className="xl:overflow-visible sm:overflow-auto">
               <div className="xl:block sm:flex xl:mx-0 gap-x-4">
                 <div className="xl:px-0 xl:w-full sm:w-6/12 w-full sm:mb-0 mb-4 sm:block hidden">

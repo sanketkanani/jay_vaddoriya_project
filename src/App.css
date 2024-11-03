@@ -54,7 +54,7 @@
   background-color: #3dcee8;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .right-side-section {
     position: fixed;
     right: 0;
