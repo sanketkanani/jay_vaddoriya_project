@@ -202,7 +202,7 @@ const CertificateCard = () => {
     <>
       {/* {<Tags />} */}
 
-      <div className="certificate-box">
+      <div className="certificate-box 22">
         <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           {certificates &&
             certificates.length > 0 &&

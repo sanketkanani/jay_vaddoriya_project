@@ -77,7 +77,7 @@
 
 .certificate-card {
   border-radius: 15px;
-  height: 400px;
+  height: 330px;
   background-image: url("/public/images/Certificates/certificateNew.png");
   background-repeat: no-repeat !important;
   background-size: 100% !important;
@@ -350,7 +350,7 @@
     width: 100%;
   }
   .certificate-card {
-    height: 300px;
+    height: 280px;
   }
 }
 
