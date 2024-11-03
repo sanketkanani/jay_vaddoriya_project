@@ -344,7 +344,7 @@ function ProfileCard() {
                       </div>
                     </div>
                   </div>
-                  <div class="md:w-4/12 w-full px-3 pl-0">
+                  <div class="md:w-4/12 w-full px-3 pr-0">
                     <div>
                       <div className="flex mb-3">
                         <span className="text-gray-600 text-base font-normal whitespace-nowrap">

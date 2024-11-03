@@ -1046,7 +1046,7 @@ const Submission = () => {
             </div>
           </div>
         </div>
-        <div className="xl:w-[320px] lg:w-[260px] w-full px-3">
+        <div className="xl:w-[320px] lg:w-[260px] w-full px-3 right-side-section">
           <Note courseInfoName={selectedCourseName} courseId={courseId} />
         </div>
       </div>
