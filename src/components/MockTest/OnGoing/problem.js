@@ -31,12 +31,12 @@ const Problem = ({
           }
           const data = await response.json();
           setQsData(data?.main_data);
-          if(data?.main_data.length> 0){
+          if (data?.main_data.length > 0) {
             setProblemId(data?.main_data[0]?.problem_id);
             setProblemData(data?.main_data[0]);
             setTestCase(data?.main_data[0]?.test_case);
             // console.log("Question Data--->", data.main_data);
-          }          
+          }
         } catch (error) {
           console.error("Error fetching data:", error);
         }
@@ -101,27 +101,39 @@ const Problem = ({
           {!showAll && (
             <button onClick={() => setShowAll(true)}>Show More</button>
           )}
-          <span style={{whiteSpace:"pre-line"}}>{qsData[0]?.prob_text}</span>
+          <span style={{ fontSize: "14px" }}>{qsData[0]?.prob_text}</span>
         </div>
 
         <div className="section-7">
           {qsData[0]?.examples.map((example) => {
             const { title, input, output, explanation } = example;
             return (
-              <div className="example-card">
+              <div className="example-card" style={{ textAlign: "left" }}>
                 <span className="title">{title}</span>
-                <div className="box">
+                <div className="box" style={{ textAlign: "left" }}>
                   <div>
-                    <span className="label">Inputs:</span>
-                    <span className="text">{input}</span>
+                    <span className="label" style={{ fontSize: "14px" }}>
+                      Inputs:
+                    </span>
+                    <span className="text" style={{ fontSize: "14px" }}>
+                      {input}
+                    </span>
                   </div>
                   <div>
-                    <span className="label">Output:</span>
-                    <span className="text">{output}</span>
+                    <span className="label" style={{ fontSize: "14px" }}>
+                      Output:
+                    </span>
+                    <span className="text" style={{ fontSize: "14px" }}>
+                      {output}
+                    </span>
                   </div>
                   <div>
-                    <span className="label">Explanation:</span>
-                    <span className="text">{explanation}</span>
+                    <span className="label" style={{ fontSize: "14px" }}>
+                      Explanation:
+                    </span>
+                    <span className="text" style={{ fontSize: "14px" }}>
+                      {explanation}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -130,7 +142,12 @@ const Problem = ({
         </div>
 
         <div className="section-5">
-          <span>Constraints</span>
+          <span
+            className="text-gray-600 text-sm font-medium font-['Outfit'] leading-none"
+            style={{ textAlign: "left" }}
+          >
+            Constraints
+          </span>
           {qsData[0]?.constrains &&
             qsData[0]?.constrains?.length > 0 &&
             qsData[0].constrains.map((data) => (
@@ -149,11 +166,11 @@ const Problem = ({
             <img
               src={qsData[0]?.const_pic}
               alt=" "
-              className="pt-2 pb-2 inline max-w-full"
+              className="pt-2 pb-2  max-lg:max-w-[25%] max-sm:max-w-[100%] max-sm:mx-auto  w-[50%]"
             />
           )}
         </div>
-        <span style={{ fontWeight: "bold"  }}>
+        <span style={{ fontWeight: "bold" }}>
           Follow-up:{" "}
           <span style={{ fontWeight: "normal", fontSize: "14px" }}>
             {qsData[0]?.Challenge}

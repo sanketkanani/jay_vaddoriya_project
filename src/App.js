@@ -68,6 +68,7 @@ import ResetSuccessEmailComp from "./components/resetsuccessEmail/ResetSuccessEm
 import ReportTemplate1 from "./components/Templates/ReportTemplate1/index.js";
 import ReportTemplate4 from "./components/Certificates/ReportTemplate3/index.js";
 // import FreePracticeDetails from "./components/Practice/ParcticeDetails";
+import Whiteboard from "./pages/Whiteboard";
 
 const DashBoard = lazy(() => import("./components/Dashboard"));
 const StudentTimetable = lazy(() => import("./components/TimeTable"));
@@ -243,7 +244,7 @@ function App() {
                 )
               }
             />
-            {/* <Route
+            <Route
               path="/mentor/whiteboard"
               element={
                 isLoggedIn ? (
@@ -252,7 +253,7 @@ function App() {
                   <Navigate to="/login" />
                 )
               }
-            /> */}
+            />
 
             <Route
               path={`/mentor/submission`}

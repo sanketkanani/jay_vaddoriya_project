@@ -532,7 +532,7 @@ const QuizResult = ({
                     } mr-2`}
                     onClick={() => setActiveTag(item)}
                   >
-                    <span>{item}</span>
+                    <span style={{ width: "max-content" }}>{item}</span>
                   </div>
                 );
               })}
@@ -556,7 +556,7 @@ const QuizResult = ({
                 // );
                 return (
                   <div className="answer-body">
-                    <div className="">
+                    <div style={{ textAlign: "left" }}>
                       <span className="text-gray-700 text-base font-medium font-['Outfit'] pr-1">
                         {id}.
                       </span>

@@ -98,19 +98,29 @@ const Problem = ({
         </div>
         <div className="section-4">
           {showAll && (
-            <button className="!w-auto !py-2 !text-center border-primary border-solid border-2 !h-auto" onClick={() => setShowAll(false)}>Show Less</button>
+            <button
+              className="!w-auto !py-2 !text-center border-primary border-solid border-2 !h-auto"
+              onClick={() => setShowAll(false)}
+            >
+              Show Less
+            </button>
           )}
           {!showAll && (
-            <button className="!w-auto !py-2 !text-center border-primary border-solid border-2 !h-auto" onClick={() => setShowAll(true)}>Show More</button>
+            <button
+              className="!w-auto !py-2 !text-center border-primary border-solid border-2 !h-auto"
+              onClick={() => setShowAll(true)}
+            >
+              Show More
+            </button>
           )}
-          <span style={{ whiteSpace: "pre-line" }}>{qsData[0]?.prob_text}</span>
+          <span style={{ fontSize: "14px" }}>{qsData[0]?.prob_text}</span>
         </div>
         <div className="section-6 !block">
           {qsData[0]?.prob_pic !== "null" && (
             <img
               src={qsData[0]?.prob_pic}
               alt=""
-              className="pt-2 pb-2"
+              className="max-lg:max-w-[50%] max-sm:max-w-[100%] pt-2 pb-2"
             />
           )}
         </div>
@@ -123,7 +133,7 @@ const Problem = ({
               );
             // console.log("correspondingPic", correspondingPic);
             return (
-              <div className="example-card">
+              <div className="example-card" style={{ textAlign: "left" }}>
                 <span className="title">{title}</span>
                 {correspondingPic && (
                   <img
@@ -132,18 +142,30 @@ const Problem = ({
                     className="example-pic"
                   />
                 )}
-                <div className="box">
+                <div className="box" style={{ textAlign: "left" }}>
                   <div>
-                    <span className="label">Inputs:</span>
-                    <span className="text">{input}</span>
+                    <span className="label" style={{ fontSize: "14px" }}>
+                      Inputs:
+                    </span>
+                    <span className="text" style={{ fontSize: "14px" }}>
+                      {input}
+                    </span>
                   </div>
                   <div>
-                    <span className="label">Output:</span>
-                    <span className="text">{output}</span>
+                    <span className="label" style={{ fontSize: "14px" }}>
+                      Output:
+                    </span>
+                    <span className="text" style={{ fontSize: "14px" }}>
+                      {output}
+                    </span>
                   </div>
                   <div>
-                    <span className="label">Explanation:</span>
-                    <span className="text">{explanation}</span>
+                    <span className="label" style={{ fontSize: "14px" }}>
+                      Explanation:
+                    </span>
+                    <span className="text" style={{ fontSize: "14px" }}>
+                      {explanation}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -151,7 +173,10 @@ const Problem = ({
           })}
         </div>
         <div className="section-5">
-          <p className="text-gray-600 text-sm font-medium font-['Outfit'] leading-none">
+          <p
+            style={{ textAlign: "left" }}
+            className="text-gray-600 text-sm font-medium font-['Outfit'] leading-none"
+          >
             Constraints
           </p>
           {qsData[0]?.constrains &&
@@ -169,7 +194,11 @@ const Problem = ({
             Constraints
           </p> */}
           {qsData[0]?.const_pic !== "null" && (
-            <img src={qsData[0]?.const_pic} className="pt-2 pb-2" alt=" " />
+            <img
+              src={qsData[0]?.const_pic}
+              className="pt-2 pb-2  max-lg:max-w-[25%] max-sm:max-w-[100%] max-sm:mx-auto  w-[50%]  "
+              alt=" "
+            />
           )}
         </div>
         <span style={{ fontWeight: "bold" }}>

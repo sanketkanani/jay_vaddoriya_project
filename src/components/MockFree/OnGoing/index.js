@@ -167,9 +167,26 @@ const OnGoing = ({ sectionId }) => {
                     setConsolPanel(false);
                     setSubmitData({});
                   }}
-                  style={{ backgroundColor: step?.is_done ? "#35c69d1a" : step.id === selectedQuestion.id ? "#40c3d6" : "#fff" , boxShadow:step?.is_done && "0px 5px 25px rgba(62, 144, 156, 0.15)"}}
+                  style={{
+                    backgroundColor: step?.is_done
+                      ? "#35c69d1a"
+                      : step.id === selectedQuestion.id
+                      ? "#40c3d6"
+                      : "#fff",
+                    boxShadow: step?.is_done
+                      ? "none"
+                      : "0px 5px 25px 0px #3e909c26",
+                  }}
                 >
-                  <span style={{ color: step?.is_done ? "#21c496" : step.id === selectedQuestion.id ? "#fff" : "#000" }}>
+                  <span
+                    style={{
+                      color: step?.is_done
+                        ? "#21c496"
+                        : step.id === selectedQuestion.id
+                        ? "#fff"
+                        : "#000",
+                    }}
+                  >
                     {step.ques_title}
                   </span>
                 </button>
@@ -447,8 +464,8 @@ const OnGoing = ({ sectionId }) => {
                   Select Problem
                 </MenuItem>
                 {questionList
-                  .find((item) => item.topic === selectedTopic).
-                  questions.map((topic) => (
+                  .find((item) => item.topic === selectedTopic)
+                  .questions.map((topic) => (
                     <MenuItem key={topic.id} value={topic.ques_title}>
                       {topic.ques_title}
                     </MenuItem>

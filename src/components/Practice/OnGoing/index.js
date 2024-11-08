@@ -11,6 +11,7 @@ import { useCookie } from "react-use";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import NotFound from "../../../pages/NotFound";
 import { ApiBaseURL } from "../../../services/config/Endpoints";
+import { Link } from "react-router-dom";
 // import { ApiBaseURL } from "../../ApiConfig";
 
 const OnGoing = ({ courseId, week, selectedQsId }) => {
@@ -172,7 +173,7 @@ const OnGoing = ({ courseId, week, selectedQsId }) => {
                 <div className="line"></div>
               </div>
               <div className="content">
-                <a
+                <Link
                   className={
                     selectedQs === step?.q_id
                       ? activeClass
@@ -180,15 +181,22 @@ const OnGoing = ({ courseId, week, selectedQsId }) => {
                       ? "submitAns"
                       : ""
                   }
-                  onClick={() => {
+                  style={{
+                    boxShadow: step?.is_done
+                      ? "none"
+                      : "0px 5px 25px 0px #3e909c26",
+                  }}
+                  href={`/student/practice/${step?.q_id}/Problem`}
+                  onClick={(e) => {
+                    e.preventDefault();
                     navigate(`/student/practice/${step?.q_id}/Problem`);
                     // setDayLength(steps.length);
                     setTagDisable(true);
                   }}
-                  href="javascript:void(0)"
+                  // href="javascript:void(0)"
                 >
                   <span>{step.title}</span>
-                </a>
+                </Link>
               </div>
             </div>
           );

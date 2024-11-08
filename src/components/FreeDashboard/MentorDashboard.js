@@ -364,9 +364,12 @@ const MentorDashboard = () => {
           <span className="card-title">
             {courseDetail?.courseTitle || "Ongoing"}
           </span>
-          <div className="ongoing-container">
-            <div className="ongoing-container-header">
-              <span className="ongoing-container-header-title mb-3">
+          <div className="ongoing-container py-2 px-4">
+            <div
+              className="ongoing-container-header !p-0"
+              style={{ display: "block" }}
+            >
+              <span className="ongoing-container-header-title py-2">
                 There is no Ongoing Lectures
               </span>
             </div>
@@ -472,7 +475,10 @@ const MentorDashboard = () => {
         <div className="lectures-info sm:px-3 sm:!w-6/12 !w-full h-full">
           <span className="card-title">Upcoming</span>
           <div className="ongoing-container py-2 px-4">
-            <div className="ongoing-container-header !p-0">
+            <div
+              className="ongoing-container-header !p-0"
+              style={{ display: "block" }}
+            >
               <span className="ongoing-container-header-title mb-3">
                 There is no Upcoming Lectures
               </span>

@@ -23,6 +23,7 @@ const calculateSlidesToShow = (data) => {
 const createSlides = (data) => {
   const slides = [];
   const categories = { practice: [], mock: [], quiz: [] };
+  console.log("========== nbnbnb========>", data);
 
   // Categorize the data
   data.forEach((item) => {
@@ -235,6 +236,15 @@ const FreeDashboard = () => {
     return formattedDate;
   };
 
+  function formatTimestampToTime(timestamp) {
+    const date = new Date(timestamp);
+    const hours = date.getUTCHours().toString().padStart(2, '0');
+    const minutes = date.getUTCMinutes().toString().padStart(2, '0');
+    const seconds = date.getUTCSeconds().toString().padStart(2, '0');
+    
+    return `${hours}:${minutes}:${seconds}`;
+  }
+
   const formatStartTime = (timeString) => {
     if (!timeString) {
       return "";
@@ -301,7 +311,8 @@ const FreeDashboard = () => {
     next_q_id,
     next_q_week,
     course_id,
-    week_id
+    week_id,
+    course_name
   ) => {
     if (!data || Object.keys(data).length === 0) {
       return (
@@ -372,10 +383,10 @@ const FreeDashboard = () => {
           </div>
         </div>
         <span className="other-cards-wrapper-subject-title">
-          {course_id ? `Course ${course_id}` : "No Course Data"}
+          {course_name ? `${course_name}` : "No Course Data"}
         </span>
         <span className="other-cards-wrapper-subject-title">
-          Syllabus {data.syllabus_name || "No Syllabus Name"}
+         {data.syllabus_name || "No Syllabus Name"}
         </span>
         <div className="other-cards-wrapper-subject-extra-info">
           <svg
@@ -414,7 +425,7 @@ const FreeDashboard = () => {
           </svg>
           <span>
             &nbsp;&nbsp;
-            {formatStartTime(data.time || "No Time")}
+            {formatTimestampToTime(data.time || "No Time")}
           </span>
         </div>
         <div className="other-cards-footer flex items-center px-4 pb-4">
@@ -468,7 +479,8 @@ const FreeDashboard = () => {
                             item?.details?.syllabus_id, // Use optional chaining
                             item?.details?.syllabus_name,
                             item?.course_id,
-                            item?.details?.syllabus_id // Assumed that `week_value` might be from syllabus_id
+                            item?.details?.syllabus_id, // Assumed that `week_value` might be from syllabus_id
+                            item?.course_name
                           )}
                         </div>
                       ))
@@ -481,7 +493,7 @@ const FreeDashboard = () => {
               <DisplayNotice notices={notices} />
             </div>
           </div>
-          <div className="xl:w-[320px]   w-full px-3">
+          <div className="xl:w-[320px] w-full px-3 right-side-section">
             <div className="xl:overflow-visible sm:overflow-auto">
               <div className="xl:block sm:flex xl:mx-0 gap-x-4">
                 <div className="xl:px-0 xl:w-full sm:w-6/12 w-full sm:mb-0 mb-4 sm:block hidden">

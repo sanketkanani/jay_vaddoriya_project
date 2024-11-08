@@ -301,7 +301,7 @@ const DisplayNotice = ({ notices }) => {
   // }, [notices, selectedNotificationId]);
 
   return (
-    <div className="notice-content bg-white mt-6 rounded-2xl shadow-[0px_5px_25px_0px_rgba(62,144,156,0.10)] max-h-[360px] overflow-y-auto">
+    <div className="notice-content bg-white mt-6 rounded-2xl shadow-[0px_5px_25px_0px_rgba(62,144,156,0.10)] h-[494px] max-h-[494px] overflow-y-auto">
       <h2 className="text-start notice-header text-xl font-semibold text-slate-600 p-5 pt-4">
         Notice Board
       </h2>

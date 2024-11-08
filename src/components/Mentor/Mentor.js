@@ -124,7 +124,10 @@ const Mentor = () => {
   };
 
   const getHeaderTitle = () => {
-    let weekId = selectedWeekIdForNavTeaching !== null ? selectedWeekIdForNavTeaching : "Loading...";
+    let weekId =
+      selectedWeekIdForNavTeaching !== null
+        ? selectedWeekIdForNavTeaching
+        : "Loading...";
     switch (pathname) {
       case "/mentor/submission":
         return "Submission Points";
@@ -158,21 +161,25 @@ const Mentor = () => {
   }, [pathname]);
 
   return (
-    <div className="student-app">
-      <MentorSide isShowMiniMentorSidebar={isShowMiniMentorSidebar} />
-      <div className="student-main">
-        <MentorsHeader
-          title={getHeaderTitle()}
-          isShowMiniMentorSidebar={isShowMiniMentorSidebar}
-          setIsShowShortHeader={handlerShortHeader}
-          HeaderTitle={headerTitle}
-          screen={screen}
-          setScreen={setScreen}
-          resetTimer={resetTimer}
-          setResetTimer={setResetTimer}
-          timerData={timerData}
-        />
-        <div className="student-content">
+    <div className="free-student-layout">
+      <div className={`sidebar ${isShowMiniMentorSidebar ? "mini" : ""}`}>
+        <MentorSide isShowMiniMentorSidebar={isShowMiniMentorSidebar} />\
+      </div>
+      <div className={`content-area ${isShowMiniMentorSidebar ? "mini" : ""}`}>
+        <div className="header">
+          <MentorsHeader
+            title={getHeaderTitle()}
+            isShowMiniMentorSidebar={isShowMiniMentorSidebar}
+            setIsShowShortHeader={handlerShortHeader}
+            HeaderTitle={headerTitle}
+            screen={screen}
+            setScreen={setScreen}
+            resetTimer={resetTimer}
+            setResetTimer={setResetTimer}
+            timerData={timerData}
+          />
+        </div>
+        <div className="content-body">
           <mentorContext.Provider
             value={{
               screen,

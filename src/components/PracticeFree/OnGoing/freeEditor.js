@@ -37,7 +37,7 @@ const FreeEditor = ({
   activeTag,
   setActiveTag,
   scroll,
-  fetchFreeQuestionList
+  fetchFreeQuestionList,
 }) => {
   const [compilerData, setCompilerData] = useState([]);
   const [loggedIn] = useCookie("maang");
@@ -356,10 +356,11 @@ const FreeEditor = ({
                       <h3
                         className="text-base font-semibold leading-6 text-gray-900"
                         id="modal-title"
+                        style={{ textAlign: "left" }}
                       >
                         Code
                       </h3>
-                      <div className="mt-2">
+                      <div className="mt-2" style={{ textAlign: "left" }}>
                         <pre className="text-sm text-gray-500">
                           {clickedItems?.student_ans}
                         </pre>

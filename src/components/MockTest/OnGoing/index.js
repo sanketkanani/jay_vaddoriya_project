@@ -224,6 +224,11 @@ const OnGoing = ({ courseId, week }) => {
                 setActiveTag("Problem");
               }}
               href="javascript:void(0)"
+              style={{
+                boxShadow: steps?.is_done
+                  ? "none"
+                  : "0px 5px 25px 0px #3e909c26",
+              }}
             >
               <span>{steps.title}</span>
             </a>

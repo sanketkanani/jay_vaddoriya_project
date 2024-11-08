@@ -287,9 +287,12 @@ const Main = () => {
           <span className="card-title text-start">
             {courseDetail?.courseTitle || "Ongoing"}
           </span>
-          <div className="ongoing-container">
-            <div className="ongoing-container-header">
-              <span className="ongoing-container-header-title mb-3">
+          <div className="ongoing-container py-2 px-4">
+            <div
+              className="ongoing-container-header !p-0"
+              style={{ display: "block" }}
+            >
+              <span className="ongoing-container-header-title py-2 ">
                 There is no Ongoing Lectures
               </span>
             </div>
@@ -384,9 +387,12 @@ const Main = () => {
     if (!upcomingBatch || upcomingBatch.length === 0) {
       return (
         <div className="lectures-info sm:px-3 sm:!w-6/12 !w-full h-full text-left">
-          <h2 className="card-title text-start">Upcoming</h2>
+          <h2 className="card-title text-start d-block">Upcoming</h2>
           <div className="ongoing-container py-2 px-4">
-            <div className="ongoing-container-header !p-0">
+            <div
+              className="ongoing-container-header !p-0"
+              style={{ display: "block" }}
+            >
               <span className="ongoing-container-header-title py-2">
                 There is no Upcoming Lectures
               </span>
@@ -861,29 +867,62 @@ const Main = () => {
     groupedData[courseName].push(item);
   });
 
+  // Inline styles
+  const overlayStyle = {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 1000,
+  };
+
+  const contentStyle = {
+    backgroundColor: "#fff",
+    padding: "20px",
+    borderRadius: "8px",
+    position: "relative",
+    maxWidth: "80%",
+    width: "100%",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    maxHeight: "400px",
+    overflow: "scroll",
+  };
+
+  const closeButtonStyle = {
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    background: "transparent",
+    border: "none",
+    fontSize: "20px",
+    cursor: "pointer",
+  };
+
+  const openModal = () => setShowTermsModal(true);
+  const closeModal = () => setShowTermsModal(false);
+
   return (
     <>
-      {/* {showTermsModal && (
-        <div className="modal-overlay z-10 px-10">
-          <div className="modal !w-auto xl:!max-w-[900px] md:!max-w-[730px] sm:!max-w-[600px] !max-w-[100%]">
-            <div className="modal-content break-words">
-              <div class="mb-4 text-gray-700 text-[25px] font-semibold font-['Outfit']">
-                Terms & Conditions
-              </div>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                1. Introduction
-              </h4>
-              <p>                Welcome to MAANG Careers! We are dedicated to providing
+      <div className="p-5">
+        {showTermsModal && (
+          <div style={overlayStyle} onClick={closeModal}>
+            <div style={contentStyle} onClick={(e) => e.stopPropagation()}>
+              <h2>Terms & Conditions</h2>
+              <h3>1. Introduction</h3>
+              <p>
+                Welcome to MAANG Careers! We are dedicated to providing
                 top-notch training to enhance your career prospects. Our classes
                 are structured to offer a rich learning experience, blending
                 instructional teaching with interactive sessions for clearing
                 doubts.
               </p>
-              <h5 className="text-lg font-semibold font-['Outfit']">Class Schedule and Format</h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
+              <h4>Class Schedule and Format</h4>
+              <ul>
                 <li>
                   Each batch will have three classes per week. The specific days
                   will be communicated to you.
@@ -901,11 +940,8 @@ const Main = () => {
                   throughout the course.
                 </li>
               </ul>
-              <h5 className="text-lg font-semibold font-['Outfit']">Practice and Performance</h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
+              <h4>Practice and Performance</h4>
+              <ul>
                 <li>
                   Engage with all practice questions, quizzes, and mock tests to
                   improve your coding skills.
@@ -919,14 +955,10 @@ const Main = () => {
                   in your student portal.
                 </li>
               </ul>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                2. Terms of Service
-              </h4>
-              <h5 className="text-lg font-semibold font-['Outfit']">Interactions and Conduct</h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
+
+              <h3>2. Terms of Service</h3>
+              <h4>Interactions and Conduct</h4>
+              <ul>
                 <li>
                   Personal interactions between students and mentors outside of
                   official channels are not permitted, including the creation of
@@ -943,11 +975,8 @@ const Main = () => {
                   rules.
                 </li>
               </ul>
-              <h5 className="text-lg font-semibold font-['Outfit']">Course Enrollment and Refunds</h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
+              <h4>Course Enrollment and Refunds</h4>
+              <ul>
                 <li>
                   Once enrolled in a course, you are responsible for your
                   participation. No refunds will be given.
@@ -957,11 +986,8 @@ const Main = () => {
                   month of completion of your course.
                 </li>
               </ul>
-              <h5 className="text-lg font-semibold font-['Outfit']">Performance and Placement</h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
+              <h4>Performance and Placement</h4>
+              <ul>
                 <li>
                   Your performance in the course is your responsibility. We
                   provide training without ensuring any job guarantees.
@@ -971,14 +997,10 @@ const Main = () => {
                   on your performance metrics and mentor recommendations.
                 </li>
               </ul>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                3. Specific Terms for Different Programs
-              </h4>
-              <h5 className="text-lg font-semibold font-['Outfit']">Training Program</h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
+
+              <h3>3. Specific Terms for Different Programs</h3>
+              <h4>Training Program</h4>
+              <ul>
                 <li>
                   Enrollment in the training program is solely for educational
                   purposes and does not include job assistance.
@@ -988,11 +1010,8 @@ const Main = () => {
                   batch mentor suggestions.
                 </li>
               </ul>
-              <h5 className="text-lg font-semibold font-['Outfit']">Training and Placement Assistance Program</h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
+              <h4>Training and Placement Assistance Program</h4>
+              <ul>
                 <li>
                   The sole intention of this program is to make you
                   interview-ready, and the company reserves the right to decide
@@ -1018,38 +1037,28 @@ const Main = () => {
                   placements.
                 </li>
               </ul>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                4. Consequences of Non-Compliance
-              </h4>
 
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  Failure to comply with these terms may result in your being
-                  removed from the batch and the termination of your student
-                  contract with the company without refunds or prior notice.
-                </li>
-              </ul>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                5. Agreement and Acknowledgment
-              </h4>
+              <h3>4. Consequences of Non-Compliance</h3>
+              <p>
+                Failure to comply with these terms may result in your being
+                removed from the batch and the termination of your student
+                contract with the company without refunds or prior notice.
+              </p>
 
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  By agreeing to these terms, you acknowledge that the company's
-                  priority is to provide quality education and training.
-                </li>
-                <li>
-                  You agree not to take any action against the company and to
-                  focus on your preparation and learning.
-                </li>
-              </ul>
-              <p className="mb-5 text-gray-600 text-base font-normal font-['Outfit']">By understanding and agreeing to these terms, you consent to abide by the rules and regulations of MAANG Careers as outlined above.</p>
+              <h3>5. Agreement and Acknowledgment</h3>
+              <p>
+                By agreeing to these terms, you acknowledge that the company's
+                priority is to provide quality education and training.
+              </p>
+              <p>
+                You agree not to take any action against the company and to
+                focus on your preparation and learning.
+              </p>
+              <p>
+                By understanding and agreeing to these terms, you consent to
+                abide by the rules and regulations of MAANG Careers as outlined
+                above.
+              </p>
 
               <div className="flex items-center mb-4">
                 <input
@@ -1079,9 +1088,7 @@ const Main = () => {
               </div>
             </div>
           </div>
-        </div>
-      )} */}
-      <div className="p-5">
+        )}
         <div class="flex flex-wrap -mx-3 gap-y-4">
           <div className="xl:w-[calc(100%-320px)] w-full px-3">
             <div className="student-card rounded-2xl bg-white shadow-[0px_5px_25px_0px_rgba(62,144,156,0.10)]">

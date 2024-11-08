@@ -225,11 +225,11 @@
   background: #e0f6f4 !important;
 }
 
-.default-bg{
+.default-bg {
   background: rgba(220, 221, 224, 1);
 }
 
-.default-bg span{
+.default-bg span {
   color: rgba(89, 95, 110, 1);
 }
 
@@ -349,38 +349,38 @@
 }
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
-  .count-down-row > .count-down-mobile{
+  .count-down-row > .count-down-mobile {
     display: block;
   }
 }
 
-.count-down-row > .count-down-mobile{
-    display: flex;
-    width: max-content;
-    margin: 0;
-  }
+.count-down-row > .count-down-mobile {
+  display: flex;
+  width: max-content;
+  margin: 0;
+}
 
 @media (min-width: 1025px) {
-.count-down-row {
+  .count-down-row {
     display: none;
-}
+  }
 }
 
 @media (max-width: 1025px) {
-.quiz-week-block{
-  display: flex;
-  flex-direction: column;
-}
-.quiz-week-block > div:first-child{
+  .quiz-week-block {
+    display: flex;
+    flex-direction: column;
+  }
+  /* .quiz-week-block > div:first-child{
   order: 2;
-}
-.quiz-week-block > div:last-child{
-  order: 1;
-  margin-bottom: 15px;
-}
-.exit-button-block{
-  display: none;
-}
+} */
+  .quiz-week-block > div:last-child {
+    /* order: 1; */
+    margin-top: 15px;
+  }
+  .exit-button-block {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 820px) {
@@ -499,11 +499,20 @@
     margin: 0 auto;
   }
 
-  .quiz-week-left .quiz-options-box .quiz-options .MuiGrid-container .MuiGrid-item {
+  .quiz-week-left
+    .quiz-options-box
+    .quiz-options
+    .MuiGrid-container
+    .MuiGrid-item {
     padding: 20px 0 0;
   }
 
-  .quiz-week-left .quiz-options-box .quiz-options .MuiGrid-container .MuiGrid-item button {
+  .quiz-week-left
+    .quiz-options-box
+    .quiz-options
+    .MuiGrid-container
+    .MuiGrid-item
+    button {
     width: 100%;
   }
 
@@ -544,11 +553,20 @@
     margin: 0 auto;
   }
 
-  .quiz-week-left .quiz-options-box .quiz-options .MuiGrid-container .MuiGrid-item {
+  .quiz-week-left
+    .quiz-options-box
+    .quiz-options
+    .MuiGrid-container
+    .MuiGrid-item {
     padding: 20px 0 0;
   }
 
-  .quiz-week-left .quiz-options-box .quiz-options .MuiGrid-container .MuiGrid-item button {
+  .quiz-week-left
+    .quiz-options-box
+    .quiz-options
+    .MuiGrid-container
+    .MuiGrid-item
+    button {
     width: 100%;
     padding-left: 10px; /* Add padding to the left side */
   }
@@ -577,19 +595,19 @@
 
 @media only screen and (min-width: 640px) and (max-width: 820px) {
   .student-content .MuiGrid-container .MuiGrid-root {
-      max-width: 50%;
-      flex-basis: 50%;
+    max-width: 50%;
+    flex-basis: 50%;
   }
 
   .question-number .MuiGrid-container .MuiGrid-root {
-      max-width: none !important;
-      flex-basis: auto !important;
+    max-width: none !important;
+    flex-basis: auto !important;
   }
 }
 
 @media (max-width: 639px) {
   .student-content .MuiGrid-container .MuiGrid-root {
-      max-width: 100%;
-      flex-basis: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
   }
 }

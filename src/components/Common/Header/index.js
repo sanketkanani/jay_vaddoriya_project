@@ -16,6 +16,7 @@ import { useLocation } from "react-router-dom";
 import NotificationPanel from "./notificationPanel";
 import Badge from "@mui/material/Badge";
 import { ApiBaseURL } from "../../../services/config/Endpoints";
+import { Link } from "react-router-dom";
 // import { ApiBaseURL, ApiEndpoints } from "../../ApiConfig";
 // import "./notificationPanel.css";
 
@@ -401,11 +402,14 @@ const Header = ({
                 {title}
               </span>
             </div>
-            <img
-              className="app-logo"
-              src="/images/logo-lg.png"
-              alt="app logo"
-            />
+            <Link to="/">
+              <img
+                className="app-logo"
+                src="/images/logo-lg.png"
+                alt="app logo"
+              />
+            </Link>
+
             {pathname !== "/student/practice" && isShowCountdown && (
               <div className="count-down  ">
                 <img src="/images/Practice/clock.svg" alt="header icon" />

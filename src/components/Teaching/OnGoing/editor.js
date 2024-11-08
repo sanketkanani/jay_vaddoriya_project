@@ -106,12 +106,13 @@ const CodeEditor = ({
         const compilersData = data.main_data;
 
         if (compilersData.length > 0) {
-            setSaveCodeId(compilersData[0].save_code_id);
-            setCompilers(compilersData);
-            setActiveLanguage(compilersData[0].compilers_name);
-            const codeValue = problemData.pre_code || compilersData[0].load_template;
-            setCodeValue(codeValue);
-            setReset(!problemData.pre_code);
+          setSaveCodeId(compilersData[0].save_code_id);
+          setCompilers(compilersData);
+          setActiveLanguage(compilersData[0].compilers_name);
+          const codeValue =
+            problemData.pre_code || compilersData[0].load_template;
+          setCodeValue(codeValue);
+          setReset(!problemData.pre_code);
         }
       } catch (error) {
         setLoading(false);
@@ -122,50 +123,50 @@ const CodeEditor = ({
 
   useEffect(() => {
     fetchDataFromApi();
-  // }, [loggedIn, selectedQs, problemData, reset]);
+    // }, [loggedIn, selectedQs, problemData, reset]);
   }, [loggedIn]);
-
 
   const fetchDataFromApiDelete = async (compilerId) => {
     if (!selectedQs) return;
     setLoading(true);
     try {
-        const token = JSON.parse(loggedIn).token;
-        const response = await fetch(
-            `${ApiBaseURL}mentor-management/inst-practice-question-temp/?question_id=${selectedQs}`,
-            {
-                method: "GET",
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            }
-        );
-  
-        if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.status}`);
+      const token = JSON.parse(loggedIn).token;
+      const response = await fetch(
+        `${ApiBaseURL}mentor-management/inst-practice-question-temp/?question_id=${selectedQs}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Token ${token}`,
+          },
         }
-  
-        const data = await response.json();
-        const compilersData = data.main_data;
-        const compilerDataSingle = compilersData.find(item =>  item.save_code_id === compilerId);
-  
-        if (compilersData.length > 0) {
-            setSaveCodeId(compilerDataSingle.save_code_id);
-            setCompilers(compilersData);
-            setActiveLanguage(compilerDataSingle.compilers_name);
-  
-            const codeValue = problemData.pre_code || compilerDataSingle.load_template;
-            setCodeValue(codeValue);
-            setReset(!problemData.pre_code);
-        }
-  
+      );
+
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const compilersData = data.main_data;
+      const compilerDataSingle = compilersData.find(
+        (item) => item.save_code_id === compilerId
+      );
+
+      if (compilersData.length > 0) {
+        setSaveCodeId(compilerDataSingle.save_code_id);
+        setCompilers(compilersData);
+        setActiveLanguage(compilerDataSingle.compilers_name);
+
+        const codeValue =
+          problemData.pre_code || compilerDataSingle.load_template;
+        setCodeValue(codeValue);
+        setReset(!problemData.pre_code);
+      }
     } catch (error) {
-        console.error("Error fetching data:", error.message);
+      console.error("Error fetching data:", error.message);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
   };
-
 
   useEffect(() => {
     setSelectedProblemId(problemId);
@@ -178,7 +179,7 @@ const CodeEditor = ({
       );
       setSelectedComp(selectedCompiler);
       setCodeValue(selectedCompiler.load_template);
-      setSaveCodeId(selectedCompiler.save_code_id)
+      setSaveCodeId(selectedCompiler.save_code_id);
       setInitialCodeValue(
         selectedCompiler ? selectedCompiler.load_template : ""
       );
@@ -188,45 +189,42 @@ const CodeEditor = ({
     }
   }, [compilers, activeLanguage, testCase]);
 
-
   const fetchDataFromApiQs = async () => {
     if (!selectedQs) return;
-  
+
     setLoading(true);
     try {
-        const token = JSON.parse(loggedIn).token;
-        const response = await fetch(
-            `${ApiBaseURL}mentor-management/inst-practice-question-temp/?question_id=${selectedQs}`,
-            {
-                method: "GET",
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            }
-        );
-  
-        if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.status}`);
+      const token = JSON.parse(loggedIn).token;
+      const response = await fetch(
+        `${ApiBaseURL}mentor-management/inst-practice-question-temp/?question_id=${selectedQs}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Token ${token}`,
+          },
         }
-  
-        const data = await response.json();
-        const compilersData = data.main_data;
-  
-        if (compilersData.length > 0) {
-            setCompilers(compilersData);
-        }
-  
+      );
+
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const compilersData = data.main_data;
+
+      if (compilersData.length > 0) {
+        setCompilers(compilersData);
+      }
     } catch (error) {
-        console.error("Error fetching data:", error.message);
+      console.error("Error fetching data:", error.message);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
   };
 
-
-  useEffect(()=>{
+  useEffect(() => {
     fetchDataFromApiQs();
-  },[activeLanguage])
+  }, [activeLanguage]);
 
   const handleChange = (event, newValue) => {
     setOutputTab(newValue);
@@ -319,16 +317,13 @@ const CodeEditor = ({
 
     // console.log("FORM DATA RESULT_------------>", formData);
 
-    fetch(
-      `${ApiBaseURL}mentor-management/inst-practice-question-submission/`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Token ${JSON.parse(loggedIn).token}`,
-        },
-        body: formData,
-      }
-    )
+    fetch(`${ApiBaseURL}mentor-management/inst-practice-question-submission/`, {
+      method: "POST",
+      headers: {
+        Authorization: `Token ${JSON.parse(loggedIn).token}`,
+      },
+      body: formData,
+    })
       .then((response) => response.json())
       .then((data) => {
         // console.log("Data------>", data);
@@ -421,16 +416,13 @@ const CodeEditor = ({
     formData.append("q_id", selectedQs);
     formData.append("code", codeValue);
     formData.append("compliler_id", selectedComp.save_code_id);
-    fetch(
-      `${ApiBaseURL}mentor-management/inst-practice-save-code/`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Token ${JSON.parse(loggedIn).token}`,
-        },
-        body: formData,
-      }
-    )
+    fetch(`${ApiBaseURL}mentor-management/inst-practice-save-code/`, {
+      method: "POST",
+      headers: {
+        Authorization: `Token ${JSON.parse(loggedIn).token}`,
+      },
+      body: formData,
+    })
       .then((response) => response.json())
       .then((data) => {
         // console.log("Data save!");
@@ -477,7 +469,7 @@ const CodeEditor = ({
         </div>
         <div className="action">
           <IconButton
-            onClick={()=>handleResetCode()}
+            onClick={() => handleResetCode()}
             className="pr-3"
             color="primary"
           >
@@ -608,10 +600,11 @@ const CodeEditor = ({
                     <h3
                       className="text-base font-semibold leading-6 text-gray-900"
                       id="modal-title"
+                      style={{ textAlign: "left" }}
                     >
                       Code
                     </h3>
-                    <div className="mt-2">
+                    <div className="mt-2" style={{ textAlign: "left" }}>
                       <pre className="text-sm text-gray-500">
                         {clickedItems?.student_ans}
                       </pre>
@@ -934,7 +927,13 @@ const CodeEditor = ({
             )}
           </div>
           <div className="right-action">
-            <button className="btn-run" onClick={() => {handleSubmitCode("Run");console.log("hello")}}>
+            <button
+              className="btn-run"
+              onClick={() => {
+                handleSubmitCode("Run");
+                console.log("hello");
+              }}
+            >
               Run
             </button>
             <button

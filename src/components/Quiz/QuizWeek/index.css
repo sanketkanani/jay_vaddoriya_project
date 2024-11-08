@@ -341,38 +341,38 @@
 }
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
-  .count-down-row > .count-down-mobile{
+  .count-down-row > .count-down-mobile {
     display: block;
   }
 }
 
-.count-down-row > .count-down-mobile{
-    display: flex;
-    width: max-content;
-    margin: 0;
-  }
+.count-down-row > .count-down-mobile {
+  display: flex;
+  width: max-content;
+  margin: 0;
+}
 
 @media (min-width: 1025px) {
-.count-down-row {
+  .count-down-row {
     display: none;
-}
+  }
 }
 
 @media (max-width: 1025px) {
-.quiz-week-block{
-  display: flex;
-  flex-direction: column;
-}
-.quiz-week-block > div:first-child{
+  .quiz-week-block {
+    display: flex;
+    flex-direction: column;
+  }
+  /* .quiz-week-block > div:first-child{
   order: 2;
-}
-.quiz-week-block > div:last-child{
-  order: 1;
-  margin-bottom: 15px;
-}
-.exit-button-block{
-  display: none;
-}
+} */
+  .quiz-week-block > div:last-child {
+    /* order: 1; */
+    margin-top: 15px;
+  }
+  .exit-button-block {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 820px) {

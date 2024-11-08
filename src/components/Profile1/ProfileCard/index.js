@@ -60,15 +60,12 @@ function ProfileCard() {
 
   useEffect(() => {
     if (loggedIn) {
-      fetch(
-        `${ApiBaseURL}user-management/studentprofileinfo/`,
-        {
-          method: "GET",
-          headers: {
-            Authorization: `Token ${JSON.parse(loggedIn).token}`,
-          },
-        }
-      )
+      fetch(`${ApiBaseURL}user-management/studentprofileinfo/`, {
+        method: "GET",
+        headers: {
+          Authorization: `Token ${JSON.parse(loggedIn).token}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           const {
@@ -143,17 +140,14 @@ function ProfileCard() {
     };
 
     const formDataString = new URLSearchParams(requestData).toString();
-    fetch(
-      `${ApiBaseURL}user-management/profilepasswordupdate/`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: `Token ${JSON.parse(loggedIn).token}`,
-        },
-        body: formDataString,
-      }
-    )
+    fetch(`${ApiBaseURL}user-management/profilepasswordupdate/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Token ${JSON.parse(loggedIn).token}`,
+      },
+      body: formDataString,
+    })
       .then((response) => response.json())
       .then((data) => {
         // console.log(data.message);
@@ -200,16 +194,13 @@ function ProfileCard() {
 
     // console.log("FORM DATA", formData);
 
-    fetch(
-      `${ApiBaseURL}user-management/profiledetailsupdate/`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Token ${JSON.parse(loggedIn).token}`,
-        },
-        body: formData,
-      }
-    )
+    fetch(`${ApiBaseURL}user-management/profiledetailsupdate/`, {
+      method: "POST",
+      headers: {
+        Authorization: `Token ${JSON.parse(loggedIn).token}`,
+      },
+      body: formData,
+    })
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -237,8 +228,6 @@ function ProfileCard() {
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };
-
-
 
   return (
     <div className="card p-5 rounded-xl bg-white">
@@ -287,7 +276,7 @@ function ProfileCard() {
           <div className="md:w-6/12 w-full px-3">
             <div className="mb-3">
               <span className="text-gray-600 text-base font-normal whitespace-nowrap">
-                Email:
+                Email:{" "}
               </span>
               <span className="text-gray-700 text-base font-medium">
                 {userProfile.email}
@@ -297,7 +286,7 @@ function ProfileCard() {
           <div className="md:w-6/12 w-full px-3">
             <div className="mb-3">
               <span className="text-gray-600 text-base font-normal whitespace-nowrap">
-                Phone Number:
+                Phone Number:{" "}
               </span>
               <span className="text-gray-700 text-base font-medium">
                 {userProfile.phoneNum}
@@ -305,78 +294,91 @@ function ProfileCard() {
             </div>
           </div>
           <div className="w-full px-3">
-            {userProfile?.Stud_course_details && userProfile?.Stud_course_details.length > 0 && userProfile?.Stud_course_details.map((course, index) => (
-              <div
-                key={index}
-                className="py-2 border-t border-1 border-solid border-gray-200"
-              >
-                <div className="flex flex-wrap -mx-3 text-left">
-                  <div class="md:w-8/12 w-full px-3 pr-0">
-                    <div className="flex mb-2">
-                      <span className="text-gray-600 text-base font-normal">
-                        Course:
-                      </span>
-                      <span className="value text-gray-700 text-base font-medium ml-2">
-                        {course.course}
-                      </span>
-                    </div>
-                    <div className="flex mb-2">
-
-                      <div className="value text-gray-700 text-base font-medium ml-2">
-                        {course &&
-                          course.inst_project_assign &&
-                          course.inst_project_assign.map((batch, index) => (
-                            <div key={batch.batch_id}>
-                              <span className="text-gray-700 text-base font-medium">
-                                <ul>
-                                  <div style={{ fontWeight: 'bold', marginBottom: '5px', marginTop: '15px' }} className="mb-2">
-                                    <span className="text-gray-600 text-base font-normal whitespace-nowrap">
-                                      Project Title {index + 1}:
-                                    </span> {batch.project_title}
-                                  </div>
-                                  {batch.project_topic && batch.project_topic.length > 0 && batch.project_topic.map((topic) => (
-                                    <li style={{ listStyle: 'inside' }}>{topic}</li>
-                                  ))}
-                                </ul>
-                              </span>
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div class="md:w-4/12 w-full px-3 pr-0">
-                    <div>
-                      <div className="flex mb-3">
-                        <span className="text-gray-600 text-base font-normal whitespace-nowrap">
-                          Start Date:
+            {userProfile?.Stud_course_details &&
+              userProfile?.Stud_course_details.length > 0 &&
+              userProfile?.Stud_course_details.map((course, index) => (
+                <div
+                  key={index}
+                  className="py-2 border-t border-1 border-solid border-gray-200"
+                >
+                  <div className="flex flex-wrap -mx-3 text-left">
+                    <div class="md:w-6/12 w-full px-3">
+                      <div className="flex mb-2">
+                        <span className="text-gray-600 text-base font-normal">
+                          Course:
                         </span>
-                        <span className="value text-gray-700 text-base font-medium ml-2 whitespace-nowrap">
-                          {course.start_date}
+                        <span className="value text-gray-700 text-base font-medium ml-2">
+                          {course.course}
                         </span>
                       </div>
-                      <div className="flex mb-3">
-                        <span className="text-gray-600 text-base font-normal whitespace-nowrap">
-                          End Date:
-                        </span>
-                        <span className="value text-gray-700 text-base font-medium ml-2 whitespace-nowrap">
-                          {course.end_date || "Ongoing"}
-                        </span>
+                      <div className="flex mb-2">
+                        <div className="value text-gray-700 text-base font-medium ml-2">
+                          {course &&
+                            course.inst_project_assign &&
+                            course.inst_project_assign.map((batch, index) => (
+                              <div key={batch.batch_id}>
+                                <span className="text-gray-700 text-base font-medium">
+                                  <ul>
+                                    <div
+                                      style={{
+                                        fontWeight: "bold",
+                                        marginBottom: "5px",
+                                        marginTop: "15px",
+                                      }}
+                                      className="mb-2"
+                                    >
+                                      <span className="text-gray-600 text-base font-normal whitespace-nowrap">
+                                        Project Title {index + 1}:
+                                      </span>{" "}
+                                      {batch.project_title}
+                                    </div>
+                                    {batch.project_topic &&
+                                      batch.project_topic.length > 0 &&
+                                      batch.project_topic.map((topic) => (
+                                        <li style={{ listStyle: "inside" }}>
+                                          {topic}
+                                        </li>
+                                      ))}
+                                  </ul>
+                                </span>
+                              </div>
+                            ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="md:w-6/12 w-full px-3">
+                      <div>
+                        <div className="flex mb-3">
+                          <span className="text-gray-600 text-base font-normal whitespace-nowrap">
+                            Start Date:
+                          </span>
+                          <span className="value text-gray-700 text-base font-medium ml-2 whitespace-nowrap">
+                            {course.start_date}
+                          </span>
+                        </div>
+                        <div className="flex mb-3">
+                          <span className="text-gray-600 text-base font-normal whitespace-nowrap">
+                            End Date:
+                          </span>
+                          <span className="value text-gray-700 text-base font-medium ml-2 whitespace-nowrap">
+                            {course.end_date || "Ongoing"}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
             <div className="mb-3 py-2 border-t border-1 border-solid border-gray-200">
-                  <span className="text-gray-600 text-base font-normal">
-                    Change Password
-                  </span>
-                  <Switch
-                    checked={isAllowPasswordChange}
-                    size="small"
-                    onChange={switchHandler}
-                  />
-                </div>
+              <span className="text-gray-600 text-base font-normal">
+                Change Password
+              </span>
+              <Switch
+                checked={isAllowPasswordChange}
+                size="small"
+                onChange={switchHandler}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -557,7 +559,7 @@ function ProfileCard() {
         </MuiAlert>
       </Snackbar>
     </div>
-  )
+  );
 }
 
-export default ProfileCard
+export default ProfileCard;

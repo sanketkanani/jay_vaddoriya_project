@@ -90,8 +90,6 @@ const CodeEditor = ({
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-
-
   const fetchDataFromApi = async () => {
     if (!selectedQs) return;
 
@@ -120,11 +118,11 @@ const CodeEditor = ({
         setCompilers(compilersData);
         setActiveLanguage(compilersData[0].compilers_name);
 
-        const codeValue = problemData.pre_code || compilersData[0].load_template;
+        const codeValue =
+          problemData.pre_code || compilersData[0].load_template;
         setCodeValue(codeValue);
         setReset(!problemData.pre_code);
       }
-
     } catch (error) {
       console.error("Error fetching data:", error.message);
     } finally {
@@ -153,25 +151,26 @@ const CodeEditor = ({
 
       const data = await response.json();
       const compilersData = data.main_data;
-      const compilerDataSingle = compilersData.find(item => item.save_code_id === compilerId);
+      const compilerDataSingle = compilersData.find(
+        (item) => item.save_code_id === compilerId
+      );
 
       if (compilersData.length > 0) {
         setSaveCodeId(compilerDataSingle.save_code_id);
         setCompilers(compilersData);
         setActiveLanguage(compilerDataSingle.compilers_name);
 
-        const codeValue = problemData.pre_code || compilerDataSingle.load_template;
+        const codeValue =
+          problemData.pre_code || compilerDataSingle.load_template;
         setCodeValue(codeValue);
         setReset(!problemData.pre_code);
       }
-
     } catch (error) {
       console.error("Error fetching data:", error.message);
     } finally {
       setLoading(false);
     }
   };
-
 
   const fetchDataFromApiQs = async () => {
     if (!selectedQs) return;
@@ -199,14 +198,12 @@ const CodeEditor = ({
       if (compilersData.length > 0) {
         setCompilers(compilersData);
       }
-
     } catch (error) {
       console.error("Error fetching data:", error.message);
     } finally {
       setLoading(false);
     }
   };
-
 
   useEffect(() => {
     fetchDataFromApi();
@@ -223,7 +220,7 @@ const CodeEditor = ({
       );
       setSelectedComp(selectedCompiler);
       setCodeValue(selectedCompiler.load_template);
-      setSaveCodeId(selectedCompiler.save_code_id)
+      setSaveCodeId(selectedCompiler.save_code_id);
       setInitialCodeValue(
         selectedCompiler ? selectedCompiler.load_template : ""
       );
@@ -233,10 +230,9 @@ const CodeEditor = ({
     }
   }, [compilers, activeLanguage, testCase]);
 
-
   useEffect(() => {
     fetchDataFromApiQs();
-  }, [activeLanguage])
+  }, [activeLanguage]);
 
   const handleChange = (event, newValue) => {
     setOutputTab(newValue);
@@ -390,7 +386,6 @@ const CodeEditor = ({
     }
   };
 
-
   useEffect(() => {
     if (testCase && testCase.length > 0) {
       setTestList(testCase);
@@ -446,7 +441,7 @@ const CodeEditor = ({
   }, [testCase, clickedItems, isClicked]);
 
   function extractLanguage(str) {
-    return str.split(' ')[0];
+    return str.split(" ")[0];
   }
 
   // console.log("clicked state:", isClicked);
@@ -574,7 +569,6 @@ const CodeEditor = ({
                     <span className="value">{clickedItems?.timer}</span>
                     <span className="type">ms</span>
                   </div>
-                  
                 </div>
                 <div className="network-wrapper">
                   <div className="network-header">
@@ -587,7 +581,6 @@ const CodeEditor = ({
                     </span>
                     <span className="type">MB</span>
                   </div>
-                  
                 </div>
               </div>
               <div className="h-[calc(100%-150px)] overflow-y-auto">
@@ -596,10 +589,11 @@ const CodeEditor = ({
                     <h3
                       className="text-base font-semibold leading-6 text-gray-900"
                       id="modal-title"
+                      style={{ textAlign: "left" }}
                     >
                       Code
                     </h3>
-                    <div className="mt-2">
+                    <div className="mt-2" style={{ textAlign: "left" }}>
                       <pre className="text-sm text-gray-500">
                         {clickedItems?.student_ans}
                       </pre>
@@ -729,7 +723,7 @@ const CodeEditor = ({
                     ) : (
                       <div className="testcase pb-5">
                         <div className="w-full h-[220px] overflow-y-auto">
-                          {compilerResult?.api_result &&
+                          {compilerResult?.api_result && (
                             <div
                               className="testcase-result max-h-[180px] overflow-y-auto"
                               style={{ padding: "10px 0" }}
@@ -740,21 +734,21 @@ const CodeEditor = ({
                                   textTransform: "capitalize",
                                   fontSize: "18px",
                                   color:
-                                    compilerResult?.api_result?.status === "Accepted"
+                                    compilerResult?.api_result?.status ===
+                                    "Accepted"
                                       ? "green"
                                       : "red",
                                 }}
                               >
                                 {compilerResult?.api_result?.status}
                               </span>
-                            </div>}
-
+                            </div>
+                          )}
 
                           {(compilerResult?.api_result &&
-                            compilerResult?.api_result.status ===
-                            "Accepted") ||
-                            (compilerResult?.api_result &&
-                              compilerResult?.api_result?.status ===
+                            compilerResult?.api_result.status === "Accepted") ||
+                          (compilerResult?.api_result &&
+                            compilerResult?.api_result?.status ===
                               "Wrong Answer") ? (
                             <>
                               <div className="flex items-center">
@@ -779,7 +773,8 @@ const CodeEditor = ({
                                           style={{
                                             color:
                                               compilerResult?.api_result &&
-                                                compilerResult?.api_result.status === "Accepted"
+                                              compilerResult?.api_result
+                                                .status === "Accepted"
                                                 ? "green"
                                                 : "red",
                                           }}
@@ -843,7 +838,7 @@ const CodeEditor = ({
                                     <span className="pl-3">
                                       {
                                         compilerResult?.api_result?.data[
-                                        activeCaseId - 1
+                                          activeCaseId - 1
                                         ]
                                       }
                                     </span>
@@ -853,14 +848,16 @@ const CodeEditor = ({
                             </>
                           ) : (
                             <>
-                              {compilerResult?.api_result &&
+                              {compilerResult?.api_result && (
                                 <div className="testcase-result max-h-[180px] overflow-y-auto">
                                   <span className="pl-3 pt-3">
                                     {" "}
-                                    <pre>{compilerResult?.api_result?.data}</pre>
+                                    <pre>
+                                      {compilerResult?.api_result?.data}
+                                    </pre>
                                   </span>
                                 </div>
-                              }
+                              )}
                             </>
                           )}
                         </div>

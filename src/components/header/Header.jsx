@@ -460,11 +460,11 @@ const Header = () => {
                   className="hidden max-lg:block h-[20px] w-[20px] "
                 />
               </button>
-              <li className="my-2 p-2 border-b ">
+              {/* <li className="my-2 p-2 border-b ">
                 <Link to="/profile" className="!text-white">
                   Profile <br />
                 </Link>
-              </li>
+              </li> */}
               <li className="my-2 p-2">
                 <Link to="/" className="!text-white">
                   Home <br />

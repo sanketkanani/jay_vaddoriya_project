@@ -415,9 +415,9 @@ const QuizWeek = ({
               {list?.map((quiz, index) => (
                 <Grid item xs={3} sm={2} key={index}>
                   <QuizPoint
-                    id={quiz?.question_id}
-                    questionNumber={index + 1}
-                    status={quiz?.status}
+                    quizList={quiz}
+                    step={step}
+                    currentQuestion={quiz?.data[step]}
                     handleExit={handleExit}
                   />
                 </Grid>

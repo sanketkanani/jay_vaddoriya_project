@@ -19,6 +19,7 @@ import SearchBar1 from "../SearchBar1";
 import { SideBarMenu } from "../SideBar/SideBarMenu";
 import { useUserStore } from "../../store/store";
 import { ApiBaseURL } from "../../services/config/Endpoints";
+import { Link } from "react-router-dom";
 // import "./notificationPanel.css";
 
 const drawerWidth = 240;
@@ -407,11 +408,14 @@ const Header1 = ({
                 {title}
               </span>
             </div>
-            <img
-              className="app-logo"
-              src="/images/logo-lg.png"
-              alt="app logo"
-            />
+            <Link to="/">
+              <img
+                className="app-logo"
+                src="/images/logo-lg.png"
+                alt="app logo"
+              />
+            </Link>
+
             {pathname !== "/student/practice" && isShowCountdown && (
               <div className="count-down absolute left-1/2 -translate-x-2/4">
                 <img src="/images/Practice/clock.svg" alt="header icon" />

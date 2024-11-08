@@ -132,7 +132,7 @@ const QuizResult = ({
                   } mr-2`}
                   onClick={() => setActiveTag(item)}
                 >
-                  <span>{item}</span>
+                  <span style={{ width: "max-content" }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -186,7 +186,7 @@ const QuizResult = ({
 
                   return (
                     <div key={id} className="answer-body">
-                      <div>
+                      <div style={{ textAlign: "left" }}>
                         <span className="text-gray-700 text-base font-medium pr-1">
                           {id}.
                         </span>

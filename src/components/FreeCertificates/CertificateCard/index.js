@@ -27,6 +27,13 @@ const CertificateCard = () => {
   const [info, setInfo] = useState();
   const [studName, setStudName] = useState("");
   const userData = JSON.parse(loggedIn);
+  const [visibleCount, setVisibleCount] = useState(2); // Initial count of visible certificates
+
+
+  const handleLoadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 2); // Increase the visible count by 2
+  };
+
 
   useEffect(() => {
     console.log("============ userData ======= ", userData);
@@ -204,28 +211,30 @@ const CertificateCard = () => {
 
       <div className="certificate-box 22">
         <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          {certificates &&
-            certificates.length > 0 &&
-            certificates.map((item, idx) => {
-              console.log("******", item);
-              const { course_name, end_date, certificate_status } = item;
-              const certificateYear = format(new Date(end_date), "MMMM yyyy");
-              return (
-                <Grid item xs={6} key={idx}>
-                  <Layout
-                    message={course_name}
-                    isDisabled={!end_date}
-                    certificateYear={certificateYear}
-                    isShowDownloadCTA={certificate_status}
-                    course_name={course_name}
-                  >
-                    <div className="certificate-card"></div>
-                  </Layout>
-                </Grid>
-              );
-            })}
+          {certificates.slice(0, visibleCount).map((item, idx) => {
+            const { course_name, end_date, certificate_status } = item;
+            const certificateYear = format(new Date(end_date), "MMMM yyyy");
+            return (
+              <Grid item xs={6} key={idx}>
+                <Layout
+                  message={course_name}
+                  isDisabled={!end_date}
+                  certificateYear={certificateYear}
+                  isShowDownloadCTA={certificate_status}
+                  course_name={course_name}
+                >
+                  <div className="certificate-card"></div>
+                </Layout>
+              </Grid>
+            );
+          })}
         </Grid>
       </div>
+      {visibleCount < certificates.length && (
+        <div style={{ textAlign: "center", margin: "20px 0"}}>
+          <button onClick={handleLoadMore} style={{height:'40px', width: '200px', background:'#35c69d', borderRadius: 40, color: '#fff' }}>Load More</button>
+        </div>
+      )}
       <div style={{ display: "none" }}>
         <div ref={reportTemplateRef}>
           <ReportTemplate

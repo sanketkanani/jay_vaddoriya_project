@@ -85,123 +85,120 @@ const CodeEditor = ({
   const [reset, setReset] = useState(false);
   const navigate = useNavigate();
 
-  
-
   const fetchDataFromApi = async () => {
     if (!selectedQs) return;
 
     setLoading(true);
     try {
-        const token = JSON.parse(loggedIn).token;
-        const response = await fetch(
-            `${ApiBaseURL}test-management/std-practice-question-temp/?question_id=${selectedQs}`,
-            {
-                method: "GET",
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            }
-        );
-
-        if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.status}`);
+      const token = JSON.parse(loggedIn).token;
+      const response = await fetch(
+        `${ApiBaseURL}test-management/std-practice-question-temp/?question_id=${selectedQs}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Token ${token}`,
+          },
         }
+      );
 
-        const data = await response.json();
-        const compilersData = data.main_data;
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
 
-        if (compilersData.length > 0) {
-            setSaveCodeId(compilersData[0].save_code_id);
-            setCompilers(compilersData);
-            setActiveLanguage(compilersData[0].compilers_name);
+      const data = await response.json();
+      const compilersData = data.main_data;
 
-            const codeValue = problemData.pre_code || compilersData[0].load_template;
-            setCodeValue(codeValue);
-            setReset(!problemData.pre_code);
-        }
+      if (compilersData.length > 0) {
+        setSaveCodeId(compilersData[0].save_code_id);
+        setCompilers(compilersData);
+        setActiveLanguage(compilersData[0].compilers_name);
 
+        const codeValue =
+          problemData.pre_code || compilersData[0].load_template;
+        setCodeValue(codeValue);
+        setReset(!problemData.pre_code);
+      }
     } catch (error) {
-        console.error("Error fetching data:", error.message);
+      console.error("Error fetching data:", error.message);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
-};
+  };
 
-const fetchDataFromApiDelete = async (compilerId) => {
-  if (!selectedQs) return;
-  setLoading(true);
-  try {
+  const fetchDataFromApiDelete = async (compilerId) => {
+    if (!selectedQs) return;
+    setLoading(true);
+    try {
       const token = JSON.parse(loggedIn).token;
       const response = await fetch(
-          `${ApiBaseURL}test-management/std-practice-question-temp/?question_id=${selectedQs}`,
-          {
-              method: "GET",
-              headers: {
-                  Authorization: `Token ${token}`,
-              },
-          }
+        `${ApiBaseURL}test-management/std-practice-question-temp/?question_id=${selectedQs}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Token ${token}`,
+          },
+        }
       );
 
       if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
+        throw new Error(`Network response was not ok: ${response.status}`);
       }
 
       const data = await response.json();
       const compilersData = data.main_data;
-      const compilerDataSingle = compilersData.find(item =>  item.save_code_id === compilerId);
+      const compilerDataSingle = compilersData.find(
+        (item) => item.save_code_id === compilerId
+      );
 
       if (compilersData.length > 0) {
-          setSaveCodeId(compilerDataSingle.save_code_id);
-          setCompilers(compilersData);
-          setActiveLanguage(compilerDataSingle.compilers_name);
+        setSaveCodeId(compilerDataSingle.save_code_id);
+        setCompilers(compilersData);
+        setActiveLanguage(compilerDataSingle.compilers_name);
 
-          const codeValue = problemData.pre_code || compilerDataSingle.load_template;
-          setCodeValue(codeValue);
-          setReset(!problemData.pre_code);
+        const codeValue =
+          problemData.pre_code || compilerDataSingle.load_template;
+        setCodeValue(codeValue);
+        setReset(!problemData.pre_code);
       }
-
-  } catch (error) {
+    } catch (error) {
       console.error("Error fetching data:", error.message);
-  } finally {
+    } finally {
       setLoading(false);
-  }
-};
+    }
+  };
 
+  const fetchDataFromApiQs = async () => {
+    if (!selectedQs) return;
 
-const fetchDataFromApiQs = async () => {
-  if (!selectedQs) return;
-
-  setLoading(true);
-  try {
+    setLoading(true);
+    try {
       const token = JSON.parse(loggedIn).token;
       const response = await fetch(
-          `${ApiBaseURL}test-management/std-practice-question-temp/?question_id=${selectedQs}`,
-          {
-              method: "GET",
-              headers: {
-                  Authorization: `Token ${token}`,
-              },
-          }
+        `${ApiBaseURL}test-management/std-practice-question-temp/?question_id=${selectedQs}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Token ${token}`,
+          },
+        }
       );
 
       if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
+        throw new Error(`Network response was not ok: ${response.status}`);
       }
 
       const data = await response.json();
       const compilersData = data.main_data;
 
       if (compilersData.length > 0) {
-          setCompilers(compilersData);
+        setCompilers(compilersData);
       }
-
-  } catch (error) {
+    } catch (error) {
       console.error("Error fetching data:", error.message);
-  } finally {
+    } finally {
       setLoading(false);
-  }
-};
-
+    }
+  };
 
   useEffect(() => {
     fetchDataFromApi();
@@ -218,7 +215,7 @@ const fetchDataFromApiQs = async () => {
       );
       setSelectedComp(selectedCompiler);
       setCodeValue(selectedCompiler.load_template);
-      setSaveCodeId(selectedCompiler.save_code_id)
+      setSaveCodeId(selectedCompiler.save_code_id);
       setInitialCodeValue(
         selectedCompiler ? selectedCompiler.load_template : ""
       );
@@ -228,10 +225,9 @@ const fetchDataFromApiQs = async () => {
     }
   }, [compilers, activeLanguage, testCase]);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     fetchDataFromApiQs();
-  },[activeLanguage])
+  }, [activeLanguage]);
 
   const handleChange = (event, newValue) => {
     setOutputTab(newValue);
@@ -385,7 +381,6 @@ const fetchDataFromApiQs = async () => {
     }
   };
 
-
   useEffect(() => {
     if (testCase && testCase.length > 0) {
       setTestList(testCase);
@@ -466,7 +461,7 @@ const fetchDataFromApiQs = async () => {
         </div>
         <div className="action">
           <IconButton
-            onClick={()=>handleResetCode()}
+            onClick={() => handleResetCode()}
             className="pr-3"
             color="primary"
           >
@@ -597,10 +592,11 @@ const fetchDataFromApiQs = async () => {
                     <h3
                       className="text-base font-semibold leading-6 text-gray-900"
                       id="modal-title"
+                      style={{ textAlign: "left" }}
                     >
                       Code
                     </h3>
-                    <div className="mt-2">
+                    <div className="mt-2" style={{ textAlign: "left" }}>
                       <pre className="text-sm text-gray-500">
                         {clickedItems?.student_ans}
                       </pre>

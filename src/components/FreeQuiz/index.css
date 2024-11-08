@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
-
-
 .quiz-card {
   border-radius: 10px;
   background: #ffffff;
@@ -153,7 +151,7 @@
 
 /* quiz card disabled */
 
-.bg-quiz-card{
+.bg-quiz-card {
   position: relative;
   background: #c8f0ec80;
   border-radius: 10px;
@@ -166,7 +164,7 @@
   background: #dff9f680;
 }
 
-.quizcard-box{
+.quizcard-box {
   padding-right: 20px;
 }
 
@@ -182,7 +180,6 @@
   z-index: 1;
 }
 
-
 @media only screen and (max-width: 480px) {
   .student-content {
     width: 100%;
@@ -197,12 +194,12 @@
     .quiz-week-body
     .quiz-week-left
     .MuiGrid-container
-    .MuiGrid-item,.student-content .quiz-card-body .MuiGrid-item {
+    .MuiGrid-item,
+  .student-content .quiz-card-body .MuiGrid-item {
     max-width: 100%;
     flex-basis: 100%;
     padding: 0px;
   }
-
 
   .student-content .quiz-week-body .quiz-week-left {
     margin-right: 0px;
@@ -392,7 +389,7 @@
   }
 
   /* Disable card */
-  .quizcard-box{
+  .quizcard-box {
     padding-right: 15px;
   }
 }
@@ -420,7 +417,8 @@
     .quiz-week-body
     .quiz-week-left
     .MuiGrid-container
-    .MuiGrid-item button {
+    .MuiGrid-item
+    button {
     width: calc(100% - 20px) !important;
     min-width: 200px !important;
     margin: 5px 10px 5px 10px;
@@ -478,7 +476,6 @@
 
   .question-action .quiz-button {
     /* width: calc(50% - 10px) !important; */
-   
   }
   .answer-body .question-body {
     align-items: start !important;
@@ -497,11 +494,10 @@
   }
 
   /* Disable Card */
-  .quizcard-box{
+  .quizcard-box {
     padding-right: 15px;
   }
 }
-
 
 /* quiz-result */
 
@@ -576,7 +572,7 @@
   width: 100%;
   margin-top: 30px;
   padding: 20px 40px;
-  background-color: #F9FFFD;
+  background-color: #f9fffd;
 }
 
 .quiz-result-text span {
@@ -774,7 +770,7 @@
 .answer-body .question-action .active-quiz-button .btn-text {
   color: #ffffff;
 }
-.answer-body .question-action .active-quiz-button-NotAttempt{
+.answer-body .question-action .active-quiz-button-NotAttempt {
   background: #c5c6cb;
   border: 0px;
 }

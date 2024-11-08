@@ -141,6 +141,11 @@ const OnGoing = ({ courseId, week, selectedQsId }) => {
                       ? "submitAns"
                       : ""
                   }
+                  style={{
+                    boxShadow: step?.is_done
+                      ? "none"
+                      : "0px 5px 25px 0px #3e909c26",
+                  }}
                   onClick={() => {
                     navigate(`/mentor/teaching/${step?.q_id}/problem`);
                     setTagDisable(true);

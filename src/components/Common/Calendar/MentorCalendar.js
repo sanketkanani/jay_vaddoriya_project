@@ -311,30 +311,6 @@ const MentorCalendar = () => {
 
       let dayStyle = {};
 
-      switch (day.format("dddd")) {
-        case "Monday":
-        case "Wednesday":
-        case "Friday":
-          dayStyle = {
-            background: "orange",
-            color: "white",
-            border: 0,
-          };
-          break;
-        case "Tuesday":
-        case "Thursday":
-        case "Saturday":
-          dayStyle = {
-            background: "rgb(64, 194, 212)",
-            color: "white",
-            border: 0,
-          };
-          break;
-        default:
-          dayStyle = {};
-          break;
-      }
-
       const courseNames = eventsOnDay.join(", ");
 
       const showHoverPopup = eventsOnDay.length > 0 && date === hoveredDate;

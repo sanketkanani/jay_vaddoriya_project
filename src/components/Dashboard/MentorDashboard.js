@@ -364,9 +364,12 @@ const MentorDashboard = () => {
           <span className="card-title">
             {courseDetail?.courseTitle || "Ongoing"}
           </span>
-          <div className="ongoing-container">
-            <div className="ongoing-container-header">
-              <span className="ongoing-container-header-title mb-3">
+          <div className="ongoing-container py-2 px-4">
+            <div
+              className="ongoing-container-header !p-0"
+              style={{ display: "block" }}
+            >
+              <span className="ongoing-container-header-title py-2">
                 There is no Ongoing Lectures
               </span>
             </div>
@@ -472,8 +475,11 @@ const MentorDashboard = () => {
         <div className="lectures-info sm:px-3 sm:!w-6/12 !w-full h-full">
           <span className="card-title">Upcoming</span>
           <div className="ongoing-container py-2 px-4">
-            <div className="ongoing-container-header !p-0">
-              <span className="ongoing-container-header-title mb-3">
+            <div
+              className="ongoing-container-header  !p-0"
+              style={{ display: "block" }}
+            >
+              <span className="ongoing-container-header-title mb-3 ">
                 There is no Upcoming Lectures
               </span>
             </div>
@@ -859,242 +865,222 @@ const MentorDashboard = () => {
     groupedData[courseName].push(item);
   });
 
+  // Inline styles
+  const overlayStyle = {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 1000,
+  };
+
+  const contentStyle = {
+    backgroundColor: "#fff",
+    padding: "20px",
+    borderRadius: "8px",
+    position: "relative",
+    maxWidth: "80%",
+    width: "100%",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    maxHeight: "400px",
+    overflow: "scroll",
+  };
+
+  const closeButtonStyle = {
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    background: "transparent",
+    border: "none",
+    fontSize: "20px",
+    cursor: "pointer",
+  };
+
+  const openModal = () => setShowTermsModal(true);
+  const closeModal = () => setShowTermsModal(false);
+
   return (
     <>
       {showTermsModal && (
-        <div className="modal-overlay z-10 px-10">
-          <div className="modal !w-auto xl:!max-w-[900px] md:!max-w-[730px] sm:!max-w-[600px] !max-w-[100%]">
-            <div className="modal-content break-words">
-              <div class="mb-4 text-gray-700 text-[25px] font-semibold font-['Outfit']">
-                Terms & Conditions
-              </div>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                1. Introduction
-              </h4>
-              <p>
-                {" "}
-                Welcome to MAANG Careers! We are dedicated to providing
-                top-notch training to enhance your career prospects. Our classes
-                are structured to offer a rich learning experience, blending
-                instructional teaching with interactive sessions for clearing
-                doubts.
+        <div style={overlayStyle} onClick={closeModal}>
+          <div style={contentStyle} onClick={(e) => e.stopPropagation()}>
+            <h2>Terms & Conditions</h2>
+            <h3>1. Introduction</h3>
+            <p>
+              Welcome to MAANG Careers! We are dedicated to providing top-notch
+              training to enhance your career prospects. Our classes are
+              structured to offer a rich learning experience, blending
+              instructional teaching with interactive sessions for clearing
+              doubts.
+            </p>
+            <h4>Class Schedule and Format</h4>
+            <ul>
+              <li>
+                Each batch will have three classes per week. The specific days
+                will be communicated to you.
+              </li>
+              <li>
+                Each class is one and a half hours long, typically including
+                teaching and doubt clearing.
+              </li>
+              <li>
+                Access live classes through your student portal dashboard or
+                through the provided timetable.
+              </li>
+              <li>
+                We only offer live classes, and no recordings will be provided
+                throughout the course.
+              </li>
+            </ul>
+            <h4>Practice and Performance</h4>
+            <ul>
+              <li>
+                Engage with all practice questions, quizzes, and mock tests to
+                improve your coding skills.
+              </li>
+              <li>
+                Your performance rating will benefit from active participation
+                in these activities.
+              </li>
+              <li>
+                We provide notes for your future reference, which you can find
+                in your student portal.
+              </li>
+            </ul>
+
+            <h3>2. Terms of Service</h3>
+            <h4>Interactions and Conduct</h4>
+            <ul>
+              <li>
+                Personal interactions between students and mentors outside of
+                official channels are not permitted, including the creation of
+                class WhatsApp groups or similar.
+              </li>
+              <li>
+                Sharing or recording course materials or data with external
+                parties (friends, relatives, teachers, etc.) is strictly
+                prohibited, and the company will take severe legal action as per
+                the law.
+              </li>
+              <li>
+                You are responsible for your conduct and adherence to these
+                rules.
+              </li>
+            </ul>
+            <h4>Course Enrollment and Refunds</h4>
+            <ul>
+              <li>
+                Once enrolled in a course, you are responsible for your
+                participation. No refunds will be given.
+              </li>
+              <li>
+                Your access to your student portal will be revoked after one
+                month of completion of your course.
+              </li>
+            </ul>
+            <h4>Performance and Placement</h4>
+            <ul>
+              <li>
+                Your performance in the course is your responsibility. We
+                provide training without ensuring any job guarantees.
+              </li>
+              <li>
+                Referrals for internships and placements will be judged based on
+                your performance metrics and mentor recommendations.
+              </li>
+            </ul>
+
+            <h3>3. Specific Terms for Different Programs</h3>
+            <h4>Training Program</h4>
+            <ul>
+              <li>
+                Enrollment in the training program is solely for educational
+                purposes and does not include job assistance.
+              </li>
+              <li>
+                Exceptional students may receive internship referrals based on
+                batch mentor suggestions.
+              </li>
+            </ul>
+            <h4>Training and Placement Assistance Program</h4>
+            <ul>
+              <li>
+                The sole intention of this program is to make you
+                interview-ready, and the company reserves the right to decide
+                the number and type of companies for referrals based on your
+                performance, internal mock interview results, and conduct during
+                the program.
+              </li>
+              <li>
+                Eligibility for referrals is based on meeting a minimum of 90%
+                in the student portal progress bar and scoring at least 75% in
+                internal mock interviews.
+              </li>
+              <li>
+                Enrollment in this program does not guarantee a job, and
+                cracking a job completely depends on the student.
+              </li>
+              <li>
+                We assist you throughout the course and make you feel confident
+                in your preparation.
+              </li>
+              <li>
+                If you do not meet the criteria, you will not be referred for
+                placements.
+              </li>
+            </ul>
+
+            <h3>4. Consequences of Non-Compliance</h3>
+            <p>
+              Failure to comply with these terms may result in your being
+              removed from the batch and the termination of your student
+              contract with the company without refunds or prior notice.
+            </p>
+
+            <h3>5. Agreement and Acknowledgment</h3>
+            <p>
+              By agreeing to these terms, you acknowledge that the company's
+              priority is to provide quality education and training.
+            </p>
+            <p>
+              You agree not to take any action against the company and to focus
+              on your preparation and learning.
+            </p>
+            <p>
+              By understanding and agreeing to these terms, you consent to abide
+              by the rules and regulations of MAANG Careers as outlined above.
+            </p>
+
+            <div className="flex items-center mb-4">
+              <input
+                type="checkbox"
+                checked={termsAccepted}
+                onChange={handleAcceptTerms}
+                className="w-5 h-5 bg-white rounded shadow-inner border border-slate-400 me-2"
+              />
+              <p className="text-gray-700 text-base font-medium font-['Outfit']">
+                Yes, I understand and agree to the above terms, and I consent
+                accordingly.{" "}
               </p>
-              <h5 className="text-lg font-semibold font-['Outfit']">
-                Class Schedule and Format
-              </h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
+            </div>
+            <div className="text-right">
+              <button
+                onClick={() => {
+                  if (termsAccepted) {
+                    handleAgree();
+                  } else {
+                    alert("Please agree to the terms to proceed.");
+                  }
+                }}
+                className="w-[100px] h-10 bg-emerald-400 rounded-[5px] text-center text-white text-base font-medium font-['Outfit']"
               >
-                <li>
-                  Each batch will have three classes per week. The specific days
-                  will be communicated to you.
-                </li>
-                <li>
-                  Each class is one and a half hours long, typically including
-                  teaching and doubt clearing.
-                </li>
-                <li>
-                  Access live classes through your student portal dashboard or
-                  through the provided timetable.
-                </li>
-                <li>
-                  We only offer live classes, and no recordings will be provided
-                  throughout the course.
-                </li>
-              </ul>
-              <h5 className="text-lg font-semibold font-['Outfit']">
-                Practice and Performance
-              </h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  Engage with all practice questions, quizzes, and mock tests to
-                  improve your coding skills.
-                </li>
-                <li>
-                  Your performance rating will benefit from active participation
-                  in these activities.
-                </li>
-                <li>
-                  We provide notes for your future reference, which you can find
-                  in your student portal.
-                </li>
-              </ul>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                2. Terms of Service
-              </h4>
-              <h5 className="text-lg font-semibold font-['Outfit']">
-                Interactions and Conduct
-              </h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  Personal interactions between students and mentors outside of
-                  official channels are not permitted, including the creation of
-                  class WhatsApp groups or similar.
-                </li>
-                <li>
-                  Sharing or recording course materials or data with external
-                  parties (friends, relatives, teachers, etc.) is strictly
-                  prohibited, and the company will take severe legal action as
-                  per the law.
-                </li>
-                <li>
-                  You are responsible for your conduct and adherence to these
-                  rules.
-                </li>
-              </ul>
-              <h5 className="text-lg font-semibold font-['Outfit']">
-                Course Enrollment and Refunds
-              </h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  Once enrolled in a course, you are responsible for your
-                  participation. No refunds will be given.
-                </li>
-                <li>
-                  Your access to your student portal will be revoked after one
-                  month of completion of your course.
-                </li>
-              </ul>
-              <h5 className="text-lg font-semibold font-['Outfit']">
-                Performance and Placement
-              </h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  Your performance in the course is your responsibility. We
-                  provide training without ensuring any job guarantees.
-                </li>
-                <li>
-                  Referrals for internships and placements will be judged based
-                  on your performance metrics and mentor recommendations.
-                </li>
-              </ul>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                3. Specific Terms for Different Programs
-              </h4>
-              <h5 className="text-lg font-semibold font-['Outfit']">
-                Training Program
-              </h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  Enrollment in the training program is solely for educational
-                  purposes and does not include job assistance.
-                </li>
-                <li>
-                  Exceptional students may receive internship referrals based on
-                  batch mentor suggestions.
-                </li>
-              </ul>
-              <h5 className="text-lg font-semibold font-['Outfit']">
-                Training and Placement Assistance Program
-              </h5>
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  The sole intention of this program is to make you
-                  interview-ready, and the company reserves the right to decide
-                  the number and type of companies for referrals based on your
-                  performance, internal mock interview results, and conduct
-                  during the program.
-                </li>
-                <li>
-                  Eligibility for referrals is based on meeting a minimum of 90%
-                  in the student portal progress bar and scoring at least 75% in
-                  internal mock interviews.
-                </li>
-                <li>
-                  Enrollment in this program does not guarantee a job, and
-                  cracking a job completely depends on the student.
-                </li>
-                <li>
-                  We assist you throughout the course and make you feel
-                  confident in your preparation.
-                </li>
-                <li>
-                  If you do not meet the criteria, you will not be referred for
-                  placements.
-                </li>
-              </ul>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                4. Consequences of Non-Compliance
-              </h4>
-
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  Failure to comply with these terms may result in your being
-                  removed from the batch and the termination of your student
-                  contract with the company without refunds or prior notice.
-                </li>
-              </ul>
-              <h4 class="mb-2 text-sky-500 text-xl font-semibold font-['Outfit']">
-                5. Agreement and Acknowledgment
-              </h4>
-
-              <ul
-                typeof="circle"
-                className="list-outside list-disc mb-5 pl-5 text-gray-600 text-base font-normal font-['Outfit']"
-              >
-                <li>
-                  By agreeing to these terms, you acknowledge that the company's
-                  priority is to provide quality education and training.
-                </li>
-                <li>
-                  You agree not to take any action against the company and to
-                  focus on your preparation and learning.
-                </li>
-              </ul>
-              <p className="mb-5 text-gray-600 text-base font-normal font-['Outfit']">
-                By understanding and agreeing to these terms, you consent to
-                abide by the rules and regulations of MAANG Careers as outlined
-                above.
-              </p>
-
-              <div className="flex items-center mb-4">
-                <input
-                  type="checkbox"
-                  checked={termsAccepted}
-                  onChange={handleAcceptTerms}
-                  className="w-5 h-5 bg-white rounded shadow-inner border border-slate-400 me-2"
-                />
-                <p className="text-gray-700 text-base font-medium font-['Outfit']">
-                  Yes, I understand and agree to the above terms, and I consent
-                  accordingly.{" "}
-                </p>
-              </div>
-              <div className="text-right">
-                <button
-                  onClick={() => {
-                    if (termsAccepted) {
-                      handleAgree();
-                    } else {
-                      alert("Please agree to the terms to proceed.");
-                    }
-                  }}
-                  className="w-[100px] h-10 bg-emerald-400 rounded-[5px] text-center text-white text-base font-medium font-['Outfit']"
-                >
-                  Agree
-                </button>
-              </div>
+                Agree
+              </button>
             </div>
           </div>
         </div>
@@ -1108,11 +1094,11 @@ const MentorDashboard = () => {
                 {displayUpcomingBatch()}
               </div>
             </div>
-            <div className="hidden sm:block">
+            <div>
               <DisplayNotice notices={notices} />
             </div>
           </div>
-          <div className="xl:w-[320px] w-full px-3">
+          <div className="xl:w-[320px] w-full px-3 right-side-section">
             <div className="xl:overflow-visible sm:overflow-auto">
               <div className="xl:block sm:flex xl:mx-0 gap-x-4">
                 <div className="xl:px-0 xl:w-full sm:w-6/12 w-full sm:mb-0 mb-4 sm:block hidden">
@@ -1130,9 +1116,6 @@ const MentorDashboard = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="block sm:hidden">
-          <DisplayNotice notices={notices} />
         </div>
       </div>
     </>
